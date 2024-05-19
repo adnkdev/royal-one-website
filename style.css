@@ -1,0 +1,258 @@
+.text-green{
+    color: #009970;
+}
+
+/*navbar */
+
+.navbar-brand {
+    position: relative;
+    background: url(assets/ROYAL\ ONE\ logo.png);
+    height: 100px;
+    width: 200px;
+    left: 15px;
+    top: 10px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.icon-wrapper {
+    max-height: 50px;
+    max-width: 50px;
+}
+
+
+.logo {
+    background-image: url(assets/ROYAL\ ONE\ logo.png);
+}
+.green-button {
+
+    background-color: #009970;
+    color: #fff;
+    font-size: 14px;
+    padding: 8px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: 0.3s background-color;
+}
+
+.green-button:hover {
+    background-color: #00b383;
+}
+
+.navbar-toggler {
+    border: none;
+    font-size: 1.25rem;
+}
+
+.nav-link {
+    color: black;
+}
+
+.font-white {
+    color: #fff;
+}
+
+.white-button {
+    
+    background-color: #ffffff;
+    color: black;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 16px 40px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: 0.3s background-color;
+
+}
+
+.white-button:hover {
+    background-color: rgb(115, 113, 113)
+}
+
+
+/*landing page */
+
+.landing-page{
+    background-image: url(assets/landing-page-room.jpg);
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+}
+
+
+.landing-page:before{
+    background-color: rgba(0, 0, 0, 0.593);
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+
+.landing-page .container {
+    z-index: 2;
+    position: relative;
+    height: 100%;
+
+}
+
+/*assessment form */
+
+.border-black {
+    border-color: black;
+}
+
+.form {
+    background-color: #009970;
+    border-radius: 5px;
+}
+
+.assessment-button {
+    
+    background-color: #ffffff;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 16px 40px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: 0.3s background-color;
+
+}
+
+.assessment-button:hover {
+    background-color: rgb(115, 113, 113)
+}
+
+
+
+/*products */
+
+.green-bg {
+    background-color: #009970;
+}
+
+
+.img-wrapper {
+    max-height: 350px;
+    max-width: 500px;
+}
+
+.img {
+    height: 100%;
+    width: 100%;
+}
+
+.white-font {
+    color: #ffffff;
+}
+
+/*About Us*/
+
+.img-shape{
+    border-radius: 5px;
+}
+
+.img-wrapper-about {
+    height: 400px;
+    width: 700px;
+}
+
+.more-button {
+
+    background-color: white;
+    color: black;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 8px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: 0.3s background-color;
+}
+
+.more-button:hover {
+    background-color: rgb(115, 113, 113);
+}
+
+
+/*products */
+
+.logo-wrapper {
+
+    max-height: 150px;
+    max-width: 250px;
+
+}
+
+/*Rebates*/
+
+.rebate-wrapper{
+
+    max-height: 200px;
+    max-width: 400px;
+
+}
+
+/*map*/
+
+.map-wrapper {
+    max-height: 400px;
+    max-width: 400px;
+
+}
+
+
+/*contact*/
+
+
+.contact-page{
+    background-image: url(assets/pexels-sarah-chai-7262405.jpg);
+    background-size: cover;
+    width: 100%;
+    height: 80vh;
+}
+
+/*about*/
+
+.house-page{
+    background-image: url(assets/house.jpg);
+    background-size: cover;
+    width: 100%;
+    height: 80vh;
+}
+
+/*aircon*/
+
+.aircon-page{
+    background-image: url(assets/air-conditioner-pic-1.jpg);
+    background-size: cover;
+    width: 100%;
+}
+
+.margin-top{
+    margin-top: 110px;
+}
+
+.background-translucent{
+    background: rgba(59, 151, 62, 0.816);
+    border-radius: 2px;
+}
+
+.img-wrapper-eligibility {
+    height: 400px;
+    width: 500px;
+}
+
+.img-wrapper-heatpump {
+    height: 400px;
+    width: 400px;
+}
+
+
+
+
+
+
+
+

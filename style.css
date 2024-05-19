@@ -80,6 +80,7 @@
 }
 
 
+
 .landing-page:before{
     background-color: rgba(0, 0, 0, 0.593);
     content: "";
@@ -91,12 +92,16 @@
 }
 
 
+
 .landing-page .container {
     z-index: 2;
     position: relative;
     height: 100%;
 
 }
+
+
+
 
 /*assessment form */
 
@@ -234,6 +239,9 @@
     margin-top: 110px;
 }
 
+.margin-top-airconditioner{
+    margin-top: 110px;
+}
 .background-translucent{
     background: rgba(59, 151, 62, 0.816);
     border-radius: 2px;
@@ -247,6 +255,20 @@
 .img-wrapper-heatpump {
     height: 400px;
     width: 400px;
+}
+
+
+@media only screen and (max-width:750px){
+
+    .navbar-button-toggle{
+        display:none;
+    }
+
+    .logo-wrapper{
+        max-height: 125px;
+        max-width: 125px;
+    }
+
 }
 
 

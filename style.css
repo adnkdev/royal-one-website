@@ -370,6 +370,13 @@ html,body
     width: 100%;
 }
 
+
+.heatpump-page{
+    background-image: url(assets/heatpump-landing.jfif);
+    background-size: cover;
+    width: 100%;
+}
+
 .margin-top{
     margin-top: 110px;
 }
@@ -398,6 +405,18 @@ html,body
 }
 
 
+@media only screen and (max-width:1000px){
+
+
+    .logo-wrapper{
+        max-height: 125px;
+        max-width: 125px;
+    }
+
+
+}
+
+
 
 
 
@@ -408,8 +427,8 @@ html,body
     }
 
     .logo-wrapper{
-        max-height: 125px;
-        max-width: 125px;
+        max-height: 150px;
+        max-width: 200px;
     }
 
 

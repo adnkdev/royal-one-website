@@ -64,78 +64,154 @@
     <section class="heatpump-page d-flex align-items-center justify-content-center pt-5">
         <div class="container pt-5 d-flex align-items-center justify-content-center ">
 
-                <div class="col-12 col-lg-6 my-3">
-                    <div class="form p-4 text-white fs-5">
-                        <h2 class="text-center">Check Your Eligibity</h2>
-                        <p class="py-2">Fill in this form to receive more information about suitable energy upgrade
-                            for your homes/business.</p>
-                        <form id="assessmentForm" name="submit-to-google-sheet"
-                            data-script="https://script.google.com/macros/s/AKfycbyVvTMlLGvFywFYYNUStNSSXpd3zZaqIYPlmJnxgz8xkN_gmlFy3xaHCuYDFenTueLdWg/exec" target="gsheet_iframe" class="row g-3">
+            <div class="col-12 col-lg-6 my-3">
+                <div class="form p-4 text-white fs-5">
+                    <h2 class="text-center">Consent Form</h2>
+                    <p class="py-2">Please complete the form below to provide your consent for participation in the VEU
+                        Program activities.</p>
+                    <form id="assessmentForm" name="submit-to-google-sheet"
+                        data-script="https://script.google.com/macros/s/AKfycbxzcOnl__dGUgfReZihySpOuCS4yZw4L2U9XReGhcLcJ96-82ca-h4-n6nIb0rsrHOP/exec"
+                        target="gsheet_iframe" class="row g-3">
 
-                            <input type="hidden" name="form_name" value="Free Energy Assessment">
+                        <input type="hidden" name="form_name" value="Consent Form">
 
-                            <div class="col-12">
-                                <label class="form-label">Business Name</label>
-                                <input type="text" class="form-control" name="business_name"
-                                    placeholder="Business Name">
+                        <div class="col-12">
+                            <label class="form-label">Business Name</label>
+                            <input type="text" class="form-control" name="business_name" placeholder="Business Name">
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="form-label">First Name</label>
+                            <input type="text" class="form-control" name="first_name" placeholder="First Name*"
+                                required>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="form-label">Last Name</label>
+                            <input type="text" class="form-control" name="last_name" placeholder="Last Name*" required>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="form-label">Email</label>
+                            <input type="email" class="form-control" name="email" placeholder="Email*" required>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="form-label">Phone</label>
+                            <input type="tel" class="form-control" name="phone" placeholder="Phone">
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="form-label">State</label>
+                            <select class="form-select" name="state" required>
+                                <option value="">Choose...</option>
+                                <option>VIC</option>
+                                <option>NSW</option>
+                                <option>QLD</option>
+                                <option>SA</option>
+                                <option>WA</option>
+                                <option>TAS</option>
+                                <option>ACT</option>
+                                <option>NT</option>
+                            </select>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="form-label">Postcode</label>
+                            <input type="text" class="form-control" name="postcode" placeholder="e.g. 3000"
+                                pattern="\d{4}">
+                        </div>
+
+                        <!-- Prescribed Activities -->
+                        <div class="col-12">
+                            <p>Prescribed Activities</p>
+
+                            <!-- Make a checkbox GROUP using activities[] -->
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="act-all" name="activities[]"
+                                    value="All activities">
+                                <label class="form-check-label fs-6" for="act-all">All activities</label>
                             </div>
 
-                            <div class="col-md-6">
-                                <label class="form-label">First Name</label>
-                                <input type="text" class="form-control" name="first_name" placeholder="First Name*"
-                                    required>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="act-ac" name="activities[]"
+                                    value="Air Conditioning">
+                                <label class="form-check-label fs-6" for="act-ac">Air Conditioning</label>
                             </div>
 
-                            <div class="col-md-6">
-                                <label class="form-label">Last Name</label>
-                                <input type="text" class="form-control" name="last_name" placeholder="Last Name*"
-                                    required>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="act-hws" name="activities[]"
+                                    value="Hot Water System">
+                                <label class="form-check-label fs-6" for="act-hws">Hot Water System</label>
                             </div>
 
-                            <div class="col-md-6">
-                                <label class="form-label">Email</label>
-                                <input type="email" class="form-control" name="email" placeholder="Email*" required>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="act-solar" name="activities[]"
+                                    value="Solar">
+                                <label class="form-check-label fs-6" for="act-solar">Solar</label>
                             </div>
 
-                            <div class="col-md-6">
-                                <label class="form-label">Phone</label>
-                                <input type="tel" class="form-control" name="phone" placeholder="Phone">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="act-battery" name="activities[]"
+                                    value="Solar Battery">
+                                <label class="form-check-label fs-6" for="act-battery">Solar Battery</label>
                             </div>
 
-                            <div class="col-md-6">
-                                <label class="form-label">State</label>
-                                <select class="form-select" name="state" required>
-                                    <option value="">Choose...</option>
-                                    <option>VIC</option>
-                                    <option>NSW</option>
-                                    <option>QLD</option>
-                                    <option>SA</option>
-                                    <option>WA</option>
-                                    <option>TAS</option>
-                                    <option>ACT</option>
-                                    <option>NT</option>
-                                </select>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="act-shower" name="activities[]"
+                                    value="Showerhead">
+                                <label class="form-check-label fs-6" for="act-shower">Showerhead</label>
                             </div>
 
-                            <div class="col-md-6">
-                                <label class="form-label">Postcode</label>
-                                <input type="text" class="form-control" name="postcode" placeholder="e.g. 3000"
-                                    pattern="\d{4}">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="act-insulation" name="activities[]"
+                                    value="Insulation">
+                                <label class="form-check-label fs-6" for="act-insulation">Insulation</label>
                             </div>
+                        </div>
 
-                            <!-- Honeypot -->
-                            <input type="text" name="website" tabindex="-1" autocomplete="off"
-                                style="position:absolute; left:-9999px; opacity:0">
-
-                            <div class="col-12 text-center">
-                                <button type="submit" class="assessment-button">Submit</button>
+                        <!-- Are you older than 18 -->
+                        <div class="col-12">
+                            <p>Are you older than 18 years?</p>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="age18" name="age_over_18"
+                                    value="yes">
+                                <label class="form-check-label fs-6" for="age18">
+                                    Yes, I am older than 18 years
+                                </label>
                             </div>
-                        </form>
+                        </div>
 
-                    </div>
+                        <!-- Consent Declaration -->
+                        <div class="col-12">
+                            <p>Consent Declaration</p>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="consent" name="consent"
+                                    value="agree" required>
+                                <label class="form-check-label fs-6" for="consent">
+                                    By submitting your contact details, you give Royal One P/L express consent
+                                    to contact you by phone, email, or SMS for 90 days regarding the products
+                                    you've enquired about. You can withdraw your consent at any time, verbally
+                                    or in writing.
+                                </label>
+                            </div>
+                        </div>
 
+
+
+                        <!-- Honeypot -->
+                        <input type="text" name="website" tabindex="-1" autocomplete="off"
+                            style="position:absolute; left:-9999px; opacity:0">
+
+                        <div class="col-12 text-center">
+                            <button type="submit" class="assessment-button">Submit</button>
+                        </div>
+                    </form>
 
                 </div>
+
+
+            </div>
 
 
 
@@ -191,8 +267,8 @@
                         <!-- Grid column -->
                         <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
                             <!-- Content -->
-                            <h6 class="text-uppercase fw-bold"><img class="logo-wrapper" href="index.html" src="assets/ROYAL ONE logo.png"
-                                    alt=""></h6>
+                            <h6 class="text-uppercase fw-bold"><img class="logo-wrapper" href="index.html"
+                                    src="assets/ROYAL ONE logo.png" alt=""></h6>
                             <hr class="mb-4 mt-0 d-inline-block mx-auto"
                                 style="width: 60px; background-color: #7c4dff; height: 2px" />
                             <p>
@@ -236,7 +312,7 @@
                                 <a href="contact.html" class="text-dark">Contact</a>
                             </p>
                             <p>
-                                <a href="form.html" class="text-dark">Check Eligibility</a>
+                                <a href="consentform.html" class="text-dark">Consent form</a>
                             </p>
 
                         </div>
@@ -279,12 +355,15 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
         integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
         crossorigin="anonymous"></script>
-     <script>
+    <script>
         const forms = document.querySelectorAll('form[name="submit-to-google-sheet"]');
 
         forms.forEach((form) => {
             form.addEventListener("submit", async (e) => {
                 e.preventDefault();
+
+                // HTML5 validation
+                if (!form.reportValidity()) return;
 
                 // honeypot
                 const hp = form.querySelector('input[name="website"]');
@@ -296,13 +375,22 @@
 
                 try {
                     const scriptURL = form.dataset.script;
-                    const formData = new FormData(form);
+                    if (!scriptURL) {
+                        swal("Error", "Form endpoint not configured.", "error");
+                        return;
+                    }
 
+                    const formData = new FormData(form);
                     formData.append("page_path", location.pathname);
                     formData.append("submitted_at", new Date().toISOString());
 
-                    await fetch(scriptURL, { method: "POST", mode: "no-cors", body: formData });
+                    // Optional timeout
+                    const ctrl = new AbortController();
+                    const timer = setTimeout(() => ctrl.abort(), 15000);
 
+                    await fetch(scriptURL, { method: "POST", mode: "no-cors", body: formData, signal: ctrl.signal });
+
+                    clearTimeout(timer);
                     form.reset();
                     swal("Done", "Your submission was successful!", "success");
                 } catch (err) {
@@ -313,6 +401,7 @@
             });
         });
     </script>
+
     <iframe name="gsheet_iframe" style="display:none;width:0;height:0;border:0;"></iframe>
 </body>
 

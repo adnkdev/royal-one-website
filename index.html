@@ -152,43 +152,69 @@
                         <h2 class="text-center">FREE ENERGY ASSESSMENT</h2>
                         <p class="py-2">Fill in this form to receive more information about suitable energy upgrade
                             for your homes/business.</p>
-                        <form class="row g-3">
+                        <form id="assessmentForm" name="submit-to-google-sheet"
+                            data-script="https://script.google.com/macros/s/AKfycbyVvTMlLGvFywFYYNUStNSSXpd3zZaqIYPlmJnxgz8xkN_gmlFy3xaHCuYDFenTueLdWg/exec" target="gsheet_iframe" class="row g-3">
+
+                            <input type="hidden" name="form_name" value="Free Energy Assessment">
+
                             <div class="col-12">
-                                <label for="Businessname" class="form-label">Business Name</label>
-                                <input type="text" class="form-control" id="InputEmail" placeholder="Email*">
+                                <label class="form-label">Business Name</label>
+                                <input type="text" class="form-control" name="business_name"
+                                    placeholder="Business Name">
                             </div>
+
                             <div class="col-md-6">
-                                <label for="inputEmail4" class="form-label">First Name</label>
-                                <input type="text" class="form-control" id="inputEmail4" placeholder="First Name*">
+                                <label class="form-label">First Name</label>
+                                <input type="text" class="form-control" name="first_name" placeholder="First Name*"
+                                    required>
                             </div>
+
                             <div class="col-md-6">
-                                <label for="inputPassword4" class="form-label">Last Name</label>
-                                <input type="text" class="form-control" id="inputPassword4" placeholder="Last Name*">
+                                <label class="form-label">Last Name</label>
+                                <input type="text" class="form-control" name="last_name" placeholder="Last Name*"
+                                    required>
                             </div>
+
                             <div class="col-md-6">
-                                <label for="inputEmail" class="form-label">Email</label>
-                                <input type="email" class="form-control" id="InputEmail" placeholder="Email*">
+                                <label class="form-label">Email</label>
+                                <input type="email" class="form-control" name="email" placeholder="Email*" required>
                             </div>
+
                             <div class="col-md-6">
-                                <label for="inputCity" class="form-label">Phone</label>
-                                <input type="number" class="form-control" id="inputCity">
+                                <label class="form-label">Phone</label>
+                                <input type="tel" class="form-control" name="phone" placeholder="Phone">
                             </div>
+
                             <div class="col-md-6">
-                                <label for="inputState" class="form-label">State</label>
-                                <select id="inputState" class="form-select">
-                                    <option selected>Choose...</option>
+                                <label class="form-label">State</label>
+                                <select class="form-select" name="state" required>
+                                    <option value="">Choose...</option>
                                     <option>VIC</option>
+                                    <option>NSW</option>
+                                    <option>QLD</option>
+                                    <option>SA</option>
+                                    <option>WA</option>
+                                    <option>TAS</option>
+                                    <option>ACT</option>
+                                    <option>NT</option>
                                 </select>
                             </div>
+
                             <div class="col-md-6">
-                                <label for="inputZip" class="form-label">Zip</label>
-                                <input type="number" class="form-control" id="inputZip">
+                                <label class="form-label">Postcode</label>
+                                <input type="text" class="form-control" name="postcode" placeholder="e.g. 3000"
+                                    pattern="\d{4}">
                             </div>
+
+                            <!-- Honeypot -->
+                            <input type="text" name="website" tabindex="-1" autocomplete="off"
+                                style="position:absolute; left:-9999px; opacity:0">
 
                             <div class="col-12 text-center">
                                 <button type="submit" class="assessment-button">Submit</button>
                             </div>
                         </form>
+
 
                     </div>
                 </div>
@@ -394,28 +420,42 @@
                     <div class="form p-4 text-white fs-5">
                         <h2 class="text-center">CONTACT US</h2>
                         <p class="py-2">Unsure about how to get started? Leave Us a Message.</p>
-                        <form class="row g-3">
+                        <form id="contactForm" name="submit-to-google-sheet"
+                            data-script="https://script.google.com/macros/s/AKfycbyVvTMlLGvFywFYYNUStNSSXpd3zZaqIYPlmJnxgz8xkN_gmlFy3xaHCuYDFenTueLdWg/exec" target="gsheet_iframe" class="row g-3">
+
+                            <input type="hidden" name="form_name" value="Contact Us">
+
                             <div class="col-md-6">
-                                <label for="inputEmail4" class="form-label">First Name</label>
-                                <input type="text" class="form-control" id="inputEmail4" placeholder="First Name*">
+                                <label class="form-label">First Name</label>
+                                <input type="text" class="form-control" name="first_name" placeholder="First Name*"
+                                    required>
                             </div>
+
                             <div class="col-md-6">
-                                <label for="inputPassword4" class="form-label">Last Name</label>
-                                <input type="text" class="form-control" id="inputPassword4" placeholder="Last Name*">
+                                <label class="form-label">Last Name</label>
+                                <input type="text" class="form-control" name="last_name" placeholder="Last Name*"
+                                    required>
                             </div>
+
                             <div class="col-md-6">
-                                <label for="inputEmail" class="form-label">Email</label>
-                                <input type="email" class="form-control" id="InputEmail" placeholder="Email*">
+                                <label class="form-label">Email</label>
+                                <input type="email" class="form-control" name="email" placeholder="Email*" required>
                             </div>
+
                             <div class="col-md-6">
-                                <label for="inputCity" class="form-label">Phone</label>
-                                <input type="number" class="form-control" id="inputCity">
+                                <label class="form-label">Phone</label>
+                                <input type="tel" class="form-control" name="phone" placeholder="Phone">
                             </div>
 
                             <div class="col-12">
-                                <label for="Businessname" class="form-label">Message</label>
-                                <textarea class="form-control" rows="5" id="comment"></textarea>
+                                <label class="form-label">Message</label>
+                                <textarea class="form-control" rows="5" name="message" placeholder="Your message..."
+                                    required></textarea>
                             </div>
+
+                            <!-- Honeypot -->
+                            <input type="text" name="website" tabindex="-1" autocomplete="off"
+                                style="position:absolute; left:-9999px; opacity:0">
 
                             <div class="col-12 text-center">
                                 <button type="submit" class="assessment-button">Submit</button>
@@ -542,7 +582,7 @@
                                 <a href="contact.html" class="text-dark">Contact</a>
                             </p>
                             <p>
-                                <a href="form.html" class="text-dark">Check Eligibility</a>
+                                <a href="form.html" class="text-dark">Consent form</a>
                             </p>
 
                         </div>
@@ -585,6 +625,43 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
         integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
         crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script>
+        const forms = document.querySelectorAll('form[name="submit-to-google-sheet"]');
+
+        forms.forEach((form) => {
+            form.addEventListener("submit", async (e) => {
+                e.preventDefault();
+
+                // honeypot
+                const hp = form.querySelector('input[name="website"]');
+                if (hp && hp.value) return;
+
+                const submitBtn = form.querySelector('button[type="submit"]');
+                const originalBtnText = submitBtn?.textContent;
+                if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = "Submitting..."; }
+
+                try {
+                    const scriptURL = form.dataset.script;
+                    const formData = new FormData(form);
+
+                    formData.append("page_path", location.pathname);
+                    formData.append("submitted_at", new Date().toISOString());
+
+                    await fetch(scriptURL, { method: "POST", mode: "no-cors", body: formData });
+
+                    form.reset();
+                    swal("Done", "Your submission was successful!", "success");
+                } catch (err) {
+                    swal("Error", "Something went wrong. Please try again.", "error");
+                } finally {
+                    if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = originalBtnText || "Submit"; }
+                }
+            });
+        });
+    </script>
+    <iframe name="gsheet_iframe" style="display:none;width:0;height:0;border:0;"></iframe>
+
 </body>
 
 </html>

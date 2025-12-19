@@ -4,27 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="Favicon.png">
-    <title>Royal One - Affordable Heating Upgrades</title>
+    <title>Royal One - Affordable Heating Upgrades with VEU Rebates</title>
     <meta name="description" content="Switch from costly gas heating to efficient electric reverse-cycle systems with Royal One. Access VEU rebates and lower your energy bills with our $0 upfront options.">
+    <meta name="keywords" content="heating upgrade, VEU rebates, gas to electric, reverse-cycle, energy savings, Victoria rebates">
+    
     <!-- Preconnect for performance -->
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
     <!-- External Resources -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
     <style>
         /* Optimized CSS Variables */
         :root {
-            --primary: #0077b6; /* Primary blue */
-            --primary-dark: #023e8a; /* Dark blue */
-            --primary-light: #00b4d8; /* Light blue accent */
-            --secondary: #38b000; /* Green accent */
-            --secondary-dark: #2d9146; /* Dark green */
-            --light: #caf0f8; /* Very light blue */
-            --lighter: #e3f7fd; /* Background light */
-            --dark: #023e8a; /* Dark text */
-            --darker: #90e0ef; /* Light blue background */
+            --primary: #0077b6;
+            --primary-dark: #023e8a;
+            --primary-light: #00b4d8;
+            --secondary: #38b000;
+            --secondary-dark: #2d9146;
+            --light: #caf0f8;
+            --lighter: #e3f7fd;
+            --dark: #023e8a;
+            --darker: #90e0ef;
             --white: #ffffff;
             --off-white: #f8fafc;
             --gray: #6c757d;
@@ -43,7 +47,6 @@
             --transition: all 0.3s ease;
             --gradient-primary: linear-gradient(135deg, var(--primary), var(--primary-light));
             --gradient-secondary: linear-gradient(135deg, var(--secondary), var(--secondary-dark));
-            --gradient-hero: linear-gradient(135deg, rgba(2, 62, 138, 0.9), rgba(0, 119, 182, 0.85));
         }
         
         /* Reset & Base Styles */
@@ -117,7 +120,7 @@
             margin: 0 auto;
         }
         
-        /* Accessibility: Skip to main content */
+        /* Accessibility */
         .skip-to-content {
             position: absolute;
             top: -40px;
@@ -146,7 +149,7 @@
             transition: width 0.3s ease;
         }
         
-        /* Header & Navigation */
+        /* Header */
         header {
             background: var(--white);
             position: fixed;
@@ -212,7 +215,8 @@
             color: var(--primary);
         }
         
-        .cta-btn {
+        /* Buttons */
+        .cta-btn, .submit-btn {
             background: var(--gradient-primary);
             color: var(--white);
             padding: 12px 28px;
@@ -226,9 +230,11 @@
             letter-spacing: 0.5px;
             position: relative;
             overflow: hidden;
+            cursor: pointer;
+            font-family: 'Montserrat', sans-serif;
         }
         
-        .cta-btn:before {
+        .cta-btn:before, .submit-btn:before {
             content: '';
             position: absolute;
             top: 0;
@@ -239,16 +245,39 @@
             transition: left 0.7s ease;
         }
         
-        .cta-btn:hover {
+        .cta-btn:hover, .submit-btn:hover {
             transform: translateY(-3px);
             box-shadow: var(--shadow-lg);
         }
         
-        .cta-btn:hover:before {
+        .cta-btn:hover:before, .submit-btn:hover:before {
             left: 100%;
         }
         
-        /* Mobile Menu Button */
+        .whatsapp-btn {
+            background: linear-gradient(135deg, var(--whatsapp), #128C7E);
+            color: var(--white);
+            border: none;
+            padding: 12px 28px;
+            border-radius: var(--radius-xl);
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+            font-family: 'Montserrat', sans-serif;
+            width: 100%;
+        }
+        
+        .whatsapp-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
+        }
+        
+        /* Mobile Menu */
         .mobile-menu-btn {
             display: none;
             font-size: 1.5rem;
@@ -261,9 +290,9 @@
             z-index: 1001;
         }
         
-        /* Hero Section - MODIFIED */
+        /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('./herobg.png') no-repeat center center/cover;
+            background: url('./herobg.jpg') no-repeat center center/cover;
             color: var(--white);
             min-height: 100vh;
             display: flex;
@@ -276,7 +305,7 @@
         .hero-container {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 40px; /* Reduced gap for better fit */
+            gap: 40px;
             align-items: center;
             width: 100%;
             position: relative;
@@ -288,31 +317,31 @@
         }
         
         .hero h1 {
-            font-size: 2.8rem; /* Slightly reduced for better fit */
+            font-size: 2.8rem;
             margin-bottom: 1.2rem;
             line-height: 1.1;
             color: var(--white);
         }
         
         .hero-subtitle {
-            font-size: 1.2rem; /* Adjusted for better fit */
+            font-size: 1.2rem;
             margin-bottom: 1.8rem;
             font-weight: 500;
             color: rgba(255, 255, 255, 0.9);
         }
         
         .hero-features {
-            margin: 25px 0; /* Reduced margin */
+            margin: 25px 0;
             display: grid;
             grid-template-columns: 1fr;
-            gap: 12px; /* Reduced gap */
+            gap: 12px;
         }
         
         .hero-feature {
             display: flex;
             align-items: center;
-            font-size: 0.95rem; /* Slightly smaller font */
-            padding: 10px 18px; /* Reduced padding */
+            font-size: 0.95rem;
+            padding: 10px 18px;
             background: rgba(255, 255, 255, 0.1);
             border-radius: var(--radius-md);
             transition: var(--transition);
@@ -327,49 +356,40 @@
         
         .hero-feature i {
             color: var(--white);
-            margin-right: 12px; /* Reduced margin */
-            font-size: 1.1rem; /* Slightly smaller */
-            min-width: 24px; /* Reduced min-width */
+            margin-right: 12px;
+            font-size: 1.1rem;
+            min-width: 24px;
         }
         
-        /* Hero Form - MODIFIED FOR BETTER FIT */
+        /* Hero Form - IMPROVED */
         .hero-form-container {
             background: var(--white);
             border-radius: var(--radius-lg);
-            padding: 25px; /* Reduced padding */
+            padding: 30px;
             box-shadow: var(--shadow-lg);
             position: relative;
-            overflow: hidden;
-            max-height: 85vh; /* Limit height */
-            overflow-y: auto; /* Make scrollable if needed */
+            max-height: 90vh;
+            overflow-y: auto;
         }
         
-        /* Custom scrollbar for form */
-        .hero-form-container::-webkit-scrollbar {
-            width: 6px;
-        }
-        
-        .hero-form-container::-webkit-scrollbar-track {
-            background: var(--light-gray);
-            border-radius: 10px;
-        }
-        
-        .hero-form-container::-webkit-scrollbar-thumb {
-            background: var(--primary);
-            border-radius: 10px;
+        @media (max-width: 768px) {
+            .hero-form-container {
+                max-height: none;
+                overflow-y: visible;
+            }
         }
         
         .form-title {
             color: var(--dark);
-            margin-bottom: 25px; /* Reduced margin */
+            margin-bottom: 25px;
             text-align: center;
-            font-size: 1.6rem; /* Slightly smaller */
+            font-size: 1.6rem;
         }
         
         #eligibilityForm {
             display: flex;
             flex-direction: column;
-            gap: 15px; /* Reduced gap */
+            gap: 20px;
         }
         
         .form-group {
@@ -379,20 +399,20 @@
         
         .form-group label {
             display: block;
-            margin-bottom: 6px; /* Reduced margin */
+            margin-bottom: 8px;
             font-weight: 600;
             color: var(--dark);
-            font-size: 0.9rem; /* Slightly smaller */
+            font-size: 0.9rem;
         }
         
         .form-group input, 
         .form-group select {
             width: 100%;
-            padding: 12px 15px; /* Reduced padding */
-            border: 1px solid var(--light-gray);
+            padding: 14px 16px;
+            border: 2px solid var(--light-gray);
             border-radius: var(--radius-sm);
             font-family: 'Open Sans', sans-serif;
-            font-size: 0.95rem; /* Slightly smaller */
+            font-size: 0.95rem;
             transition: var(--transition);
             background-color: white;
             color: var(--dark);
@@ -402,104 +422,117 @@
         .form-group select:focus {
             outline: none;
             border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(0, 119, 182, 0.1);
+            box-shadow: 0 0 0 4px rgba(0, 119, 182, 0.1);
+        }
+        
+        .form-group.error input,
+        .form-group.error select {
+            border-color: var(--error);
+        }
+        
+        .error-message {
+            color: var(--error);
+            font-size: 0.8rem;
+            margin-top: 5px;
+            display: none;
+        }
+        
+        .form-group.error .error-message {
+            display: block;
         }
         
         .form-row {
             display: flex;
-            gap: 15px; /* Reduced gap */
+            gap: 15px;
+        }
+        
+        @media (max-width: 768px) {
+            .form-row {
+                flex-direction: column;
+                gap: 20px;
+            }
         }
         
         .checkbox-group {
             display: flex;
             align-items: flex-start;
-            margin-top: 8px; /* Reduced margin */
+            margin-top: 8px;
+            padding: 10px;
+            background: var(--off-white);
+            border-radius: var(--radius-sm);
         }
         
         .checkbox-group input {
-            margin-right: 10px; /* Reduced margin */
-            margin-top: 4px; /* Reduced margin */
-            transform: scale(1.1); /* Slightly smaller */
+            margin-right: 12px;
+            margin-top: 4px;
+            transform: scale(1.2);
         }
         
         .checkbox-group label {
             font-weight: normal;
-            font-size: 0.85rem; /* Slightly smaller */
-            color: var(--gray);
+            font-size: 0.85rem;
+            color: var(--dark);
             line-height: 1.4;
         }
         
         .checkbox-group a {
             color: var(--primary);
             text-decoration: none;
+            font-weight: 600;
         }
         
-        .submit-btn {
-            background: var(--gradient-primary);
-            color: var(--white);
-            border: none;
-            padding: 15px 25px; /* Reduced padding */
-            border-radius: var(--radius-md);
-            font-size: 1rem; /* Slightly smaller */
-            font-weight: 700;
-            cursor: pointer;
-            transition: var(--transition);
-            width: 100%;
-            margin-top: 8px; /* Reduced margin */
-            letter-spacing: 0.5px; /* Reduced letter spacing */
-            box-shadow: var(--shadow-md);
-        }
-        
-        .submit-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-lg);
-        }
-        
-        .whatsapp-btn {
-            background: linear-gradient(135deg, var(--whatsapp), #128C7E);
-            color: var(--white);
-            border: none;
-            padding: 15px 25px; /* Reduced padding */
-            border-radius: var(--radius-md);
-            font-size: 1rem; /* Slightly smaller */
-            font-weight: 700;
-            cursor: pointer;
-            transition: var(--transition);
-            width: 100%;
-            margin-top: 8px; /* Reduced margin */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px; /* Reduced gap */
-            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
-        }
-        
-        .whatsapp-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
+        .checkbox-group a:hover {
+            text-decoration: underline;
         }
         
         .submission-options {
             display: flex;
             flex-direction: column;
-            gap: 8px; /* Reduced gap */
-            margin-top: 8px; /* Reduced margin */
+            gap: 15px;
+            margin-top: 10px;
         }
         
         .option-note {
             text-align: center;
             color: var(--gray);
-            font-size: 0.85rem; /* Slightly smaller */
-            margin: 4px 0; /* Reduced margin */
+            font-size: 0.85rem;
+            margin: 5px 0;
+            font-weight: 600;
         }
         
         .form-note {
             font-size: 0.8rem;
             color: var(--gray);
             text-align: center;
-            margin-top: 15px;
-            padding-top: 15px;
+            margin-top: 20px;
+            padding-top: 20px;
             border-top: 1px solid var(--light-gray);
+            line-height: 1.5;
+        }
+        
+        /* Loading State */
+        .loading {
+            position: relative;
+            pointer-events: none;
+        }
+        
+        .loading:after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 20px;
+            height: 20px;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-radius: 50%;
+            border-top-color: white;
+            animation: spin 1s ease infinite;
+            margin-left: -10px;
+            margin-top: -10px;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
         }
         
         /* Stats Section */
@@ -522,6 +555,13 @@
             box-shadow: var(--shadow-md);
             transition: var(--transition);
             border-top: 5px solid var(--primary);
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        
+        .stat-card.animated {
+            opacity: 1;
+            transform: translateY(0);
         }
         
         .stat-card:hover {
@@ -548,7 +588,7 @@
             font-weight: 500;
         }
         
-        /* Enhanced Graph Section */
+        /* Graph Section */
         .graph-section {
             background: var(--lighter);
             padding: 80px 0;
@@ -561,7 +601,7 @@
             align-items: center;
         }
         
-        .graph-content {
+        .graph-content, .graph-data {
             background: var(--white);
             border-radius: var(--radius-lg);
             padding: 40px;
@@ -601,13 +641,6 @@
         .legend-text {
             font-size: 0.9rem;
             color: var(--dark);
-        }
-        
-        .graph-data {
-            background: var(--white);
-            border-radius: var(--radius-lg);
-            padding: 40px;
-            box-shadow: var(--shadow-md);
         }
         
         .data-item {
@@ -668,6 +701,13 @@
             transition: var(--transition);
             text-align: center;
             border: 1px solid var(--light-gray);
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        
+        .feature-card.animated {
+            opacity: 1;
+            transform: translateY(0);
         }
         
         .feature-card:hover {
@@ -813,6 +853,13 @@
             box-shadow: var(--shadow-md);
             transition: var(--transition);
             border: 1px solid var(--light-gray);
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        
+        .review-card.animated {
+            opacity: 1;
+            transform: translateY(0);
         }
         
         .review-card:hover {
@@ -863,6 +910,81 @@
         .review-rating {
             color: #ffc107;
             margin-top: 20px;
+        }
+        
+        /* Policy & Terms Sections */
+        .policy-section, .terms-section {
+            background: var(--white);
+            padding: 80px 0;
+        }
+        
+        .policy-content, .terms-content {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 60px;
+            box-shadow: var(--shadow-md);
+            max-height: 70vh;
+            overflow-y: auto;
+        }
+        
+        .policy-content h2, .terms-content h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--dark);
+        }
+        
+        .policy-content h3, .terms-content h3 {
+            margin-top: 30px;
+            margin-bottom: 15px;
+            color: var(--primary-dark);
+            font-size: 1.4rem;
+        }
+        
+        .policy-content p, .terms-content p {
+            margin-bottom: 15px;
+            line-height: 1.7;
+            color: var(--dark);
+        }
+        
+        .policy-content ul, .terms-content ul {
+            margin-bottom: 20px;
+            padding-left: 30px;
+        }
+        
+        .policy-content li, .terms-content li {
+            margin-bottom: 8px;
+            line-height: 1.6;
+        }
+        
+        .terms-content h1 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.2rem;
+            color: var(--dark);
+        }
+        
+        .terms-content h2 {
+            text-align: left;
+            margin-bottom: 25px;
+            font-size: 1.6rem;
+        }
+        
+        .page-break {
+            margin: 50px 0;
+            border-bottom: 2px dashed var(--light-gray);
+            position: relative;
+        }
+        
+        .page-break:after {
+            content: 'Page Break';
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--white);
+            padding: 0 15px;
+            color: var(--gray);
+            font-size: 0.8rem;
         }
         
         /* Footer */
@@ -1067,13 +1189,38 @@
             to { opacity: 1; transform: scale(1); }
         }
         
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
+        /* Print Styles */
+        @media print {
+            header, footer, .hero-form-container, .back-to-top, .mobile-menu-btn, .cta-btn {
+                display: none !important;
+            }
+            
+            body {
+                font-size: 12pt;
+                line-height: 1.5;
+                color: #000;
+                background: #fff;
+            }
+            
+            .section {
+                padding: 20px 0;
+                page-break-inside: avoid;
+            }
+            
+            a {
+                color: #000;
+                text-decoration: underline;
+            }
+            
+            .policy-content, .terms-content {
+                max-height: none;
+                overflow: visible;
+                box-shadow: none;
+                border: 1px solid #ddd;
+            }
         }
         
-        /* Responsive Design - MODIFIED FOR FORM */
+        /* Responsive Design */
         @media (max-width: 1200px) {
             .hero h1 {
                 font-size: 2.5rem;
@@ -1099,6 +1246,11 @@
             .footer-content {
                 grid-template-columns: 1fr 1fr;
             }
+            
+            .policy-content,
+            .terms-content {
+                padding: 40px;
+            }
         }
         
         @media (max-width: 900px) {
@@ -1107,16 +1259,7 @@
                 gap: 40px;
             }
             
-            .hero-form-container {
-                max-height: none;
-                overflow-y: visible;
-            }
-            
-            .hero h1 {
-                text-align: center;
-            }
-            
-            .hero-subtitle {
+            .hero h1, .hero-subtitle {
                 text-align: center;
             }
         }
@@ -1226,13 +1369,14 @@
                 gap: 30px;
             }
             
-            .form-row {
-                flex-direction: column;
-                gap: 0;
-            }
-            
             .hero-form-container {
                 padding: 25px 20px;
+            }
+            
+            .policy-content,
+            .terms-content {
+                padding: 30px 20px;
+                max-height: none;
             }
         }
         
@@ -1320,8 +1464,8 @@
             <div class="modal-icon">
                 <i class="fas fa-check-circle"></i>
             </div>
-            <h3>Application Submitted!</h3>
-            <p>Thank you for your application! Our energy specialist will contact you within 24 hours to discuss your eligibility for heating upgrade rebates.</p>
+            <h3>Application Submitted Successfully!</h3>
+            <p>Thank you for your application! Our energy specialist will contact you within 24 hours to discuss your eligibility for heating upgrade rebates and next steps.</p>
             <button class="cta-btn" id="closeModal">Continue</button>
         </div>
     </div>
@@ -1330,7 +1474,7 @@
     <header id="header">
         <div class="container header-container">
             <a href="#" class="logo">
-                <img src="./Logo.png" alt="Royal One Energy Solutions">
+                <img src="./Logo.png" alt="Royal One Energy Solutions - VEU Accredited Heating Upgrades" loading="lazy">
             </a>
             
             <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation">
@@ -1340,7 +1484,7 @@
             <nav id="nav">
                 <ul>
                     <li><a href="#savings">Benefits</a></li>
-                    <li><a href="#graph">Savings Breakdown</a></li>
+                    <li><a href="#graph">Savings</a></li>
                     <li><a href="#features">Why Choose Us</a></li>
                     <li><a href="#reviews">Testimonials</a></li>
                     <li><a href="#hero" class="cta-btn">Apply Now</a></li>
@@ -1387,6 +1531,7 @@
                         <div class="form-group">
                             <label for="firstName">First Name*</label>
                             <input type="text" id="firstName" name="firstName" required placeholder="Your first name">
+                            <div class="error-message">Please enter your first name</div>
                         </div>
                         <div class="form-group">
                             <label for="lastName">Last Name</label>
@@ -1395,18 +1540,21 @@
                     </div>
                     
                     <div class="form-group">
-                        <label for="email">Email*</label>
-                        <input type="email" id="email" name="email" required placeholder="Your email address">
+                        <label for="email">Email Address*</label>
+                        <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+                        <div class="error-message">Please enter a valid email address</div>
                     </div>
                     
                     <div class="form-group">
                         <label for="phone">Phone Number*</label>
-                        <input type="tel" id="phone" name="phone" required placeholder="Your phone number">
+                        <input type="tel" id="phone" name="phone" required placeholder="04XX XXX XXX">
+                        <div class="error-message">Please enter a valid phone number</div>
                     </div>
                     
                     <div class="form-group">
                         <label for="postcode">Victoria Post Code*</label>
-                        <input type="text" id="postcode" name="postcode" required placeholder="Enter VIC post code (3000-3999)" maxlength="4">
+                        <input type="text" id="postcode" name="postcode" required placeholder="3000-3999" maxlength="4" pattern="[0-9]{4}">
+                        <div class="error-message">Please enter a valid VIC postcode (3000-3999)</div>
                         <small style="color: var(--gray); display: block; margin-top: 3px; font-size: 0.8rem;">Rebates available for Victoria only</small>
                     </div>
                     
@@ -1420,6 +1568,7 @@
                             <option value="split">Split System Air Conditioner</option>
                             <option value="not-sure">Not Sure</option>
                         </select>
+                        <div class="error-message">Please select your current heating type</div>
                     </div>
                     
                     <div class="form-group">
@@ -1431,12 +1580,13 @@
                             <option value="4">4 Bedrooms</option>
                             <option value="5+">5+ Bedrooms</option>
                         </select>
+                        <div class="error-message">Please select the number of bedrooms</div>
                     </div>
                     
                     <div class="checkbox-group">
                         <input type="checkbox" id="consent" name="consent" required>
                         <label for="consent">
-                            I consent to being contacted about energy-efficient products by Royal One.
+                            I consent to being contacted about energy-efficient products by Royal One. By submitting this form, I acknowledge I have read and agree to the <a href="#privacy" class="privacy-link">Privacy Policy</a> and <a href="#terms" class="terms-link">Terms & Conditions</a>.
                         </label>
                     </div>
                     
@@ -1453,7 +1603,7 @@
                     </div>
                     
                     <p class="form-note">
-                        We respect your privacy. Your information is secure with us and will only be used to process your application.
+                        We respect your privacy. Your information is secure with us and will only be used to process your application. By submitting, you agree to our terms and privacy policy.
                     </p>
                 </form>
             </div>
@@ -1511,7 +1661,6 @@
                 <div class="graph-content">
                     <h3>Breakdown of Average Gas Bill in Victorian Households</h3>
                     
-                    <!-- Bar Chart -->
                     <div class="graph-wrapper">
                         <div class="data-item">
                             <div class="data-label">
@@ -1811,13 +1960,254 @@
         </div>
     </section>
 
+    <!-- Privacy Policy Section -->
+    <section class="policy-section" id="privacy">
+        <div class="container">
+            <div class="section-title">
+                <h2>Privacy Policy</h2>
+                <p>Our commitment to protecting your personal information</p>
+            </div>
+            
+            <div class="policy-content">
+                <h2>Privacy Policy</h2>
+                
+                <p>Royal One Pty Ltd is committed to providing quality services to you and this policy outlines our ongoing obligations to you in respect of how we manage your Personal Information.</p>
+                
+                <p>We have adopted the Australian Privacy Principles (APPs) contained in the Privacy Act 1988 (Cth) (the Privacy Act). The APPs govern the way in which we collect, use, disclose, store, secure, and dispose of your Personal Information.</p>
+                
+                <p>A copy of the Australian Privacy Principles may be obtained from the website of the Office of the Australian Information Commissioner at <a href="https://www.oaic.gov.au" target="_blank">www.oaic.gov.au</a>.</p>
+                
+                <h3>What is Personal Information and why do we collect it?</h3>
+                
+                <p>Personal Information is information or an opinion that identifies an individual. Examples of Personal Information we collect include names, addresses, email addresses, and telephone numbers.</p>
+                
+                <p>This Personal Information is obtained in many ways including interviews, correspondence, by telephone, by email, via our website, from publicly available sources, from cookies, and from third parties. We do not guarantee website links or the privacy policies of authorised third parties.</p>
+                
+                <p>We collect your Personal Information for the primary purpose of providing our services, communicating with clients, and conducting our business operations, including marketing where appropriate. We may also use your Personal Information for secondary purposes closely related to the primary purpose, in circumstances where you would reasonably expect such use or disclosure.</p>
+                
+                <p>You may unsubscribe from our marketing communications at any time by contacting us in writing.</p>
+                
+                <p>Where reasonable and practicable, we will explain why we are collecting your Personal Information and how we plan to use it at the time of collection.</p>
+                
+                <h3>Sensitive Information</h3>
+                
+                <p>Sensitive information is defined in the Privacy Act to include information or an opinion about an individual's racial or ethnic origin, political opinions, religious or philosophical beliefs, trade union membership, criminal record, or health information.</p>
+                
+                <p>Sensitive information will be used only:</p>
+                
+                <ul>
+                    <li>For the primary purpose for which it was obtained</li>
+                    <li>For a secondary purpose directly related to the primary purpose</li>
+                    <li>With your consent, or</li>
+                    <li>Where required or authorised by law</li>
+                </ul>
+                
+                <div class="page-break"></div>
+                
+                <h3>Third Parties</h3>
+                
+                <p>Where reasonable and practicable, we will collect your Personal Information only from you. In some circumstances, we may be provided with Personal Information by third parties. In such cases, we will take reasonable steps to ensure you are made aware of the information provided to us.</p>
+                
+                <h3>Disclosure of Personal Information</h3>
+                
+                <p>Your Personal Information may be disclosed in circumstances including:</p>
+                
+                <ul>
+                    <li>Where you consent to the disclosure</li>
+                    <li>Where required or authorised by law</li>
+                </ul>
+                
+                <h3>Security of Personal Information</h3>
+                
+                <p>Your Personal Information is stored in a manner that reasonably protects it from misuse, loss, unauthorised access, modification, or disclosure.</p>
+                
+                <p>When Personal Information is no longer needed for the purpose for which it was obtained, we will take reasonable steps to destroy or permanently de-identify it. However, some Personal Information may be retained for a minimum period as required by law.</p>
+                
+                <h3>Access to your Personal Information</h3>
+                
+                <p>You may request access to the Personal Information we hold about you and request updates or corrections, subject to certain exceptions. To request access, please contact us in writing.</p>
+                
+                <p>Royal One Pty Ltd does not charge a fee for access requests but may charge a reasonable administrative fee for providing a copy of your Personal Information.</p>
+                
+                <p>To protect your Personal Information, we may require identification before releasing requested information.</p>
+                
+                <h3>Maintaining the Quality of your Personal Information</h3>
+                
+                <p>We take reasonable steps to ensure your Personal Information is accurate, complete, and up to date. If you believe the information we hold is inaccurate or outdated, please contact us so we can update our records.</p>
+                
+                <h3>Policy Updates</h3>
+                
+                <p>This Privacy Policy may change from time to time and the latest version will be available on our website.</p>
+                
+                <div class="page-break"></div>
+                
+                <h3>Privacy Policy Complaints and Enquiries</h3>
+                
+                <p>If you have any questions or complaints about this Privacy Policy, please contact us at:</p>
+                
+                <p><strong>Royal One Pty Ltd</strong><br>
+                Email: royalonegreen@gmail.com<br>
+                Phone: +61 433794469<br>
+                Address: 89-91 bakers rd, Coburg North VIC 3058</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Terms & Conditions Section -->
+    <section class="terms-section" id="terms">
+        <div class="container">
+            <div class="section-title">
+                <h2>Terms & Conditions</h2>
+                <p>Understanding our agreement for heating upgrade services</p>
+            </div>
+            
+            <div class="terms-content">
+                <h1>1. Definitions</h1>
+                
+                <p>In these Terms and Conditions, unless the context requires otherwise:</p>
+                
+                <ul>
+                    <li><strong>"Goods" or "Upgrade"</strong> means the approved energy-efficient products and/or services supplied and installed under the Victorian Energy Upgrades (VEU) program, as set out in the Quote or Proposal.</li>
+                    
+                    <li><strong>"Customer", "you"</strong> means the individual, company, or legal entity receiving the Upgrade.</li>
+                    
+                    <li><strong>"Royal One", "we", "us", "our"</strong> means Royal One Pty Ltd (ABN [insert ABN]), including its employees, authorised agents, contractors, and subcontractors.</li>
+                    
+                    <li><strong>"VEU Program"</strong> means the Victorian Energy Upgrades program administered by the Essential Services Commission (ESC).</li>
+                    
+                    <li><strong>"VEECs"</strong> means Victorian Energy Efficiency Certificates created under the VEU Program.</li>
+                </ul>
+                
+                <h2>2. Site Assessment and Eligibility</h2>
+                
+                <h3>2.1 A site assessment may be conducted to:</h3>
+                
+                <ul>
+                    <li>Confirm eligibility under the VEU Program</li>
+                    <li>Verify existing equipment or systems</li>
+                    <li>Determine installation requirements</li>
+                    <li>Collect evidence required for VEEC creation</li>
+                </ul>
+                
+                <h3>2.2 The assessment is a visual inspection only. Royal One is not responsible for hidden, latent, or pre-existing conditions not reasonably identifiable at the time of assessment.</h3>
+                
+                <h3>2.3 You or your authorised representative must provide safe, reasonable access to all relevant areas of the premises during assessment and installation.</h3>
+                
+                <h3>2.4 Information collected may include measurements, photographs, serial numbers, and details of existing equipment as required by the VEU Program.</h3>
+                
+                <div class="page-break"></div>
+                
+                <h2>3. Quotes and Variations</h2>
+                
+                <p><strong>3.1</strong> All quotes are estimates based on information available at the time and are subject to confirmation of VEU eligibility.</p>
+                
+                <p><strong>3.2</strong> Royal One reserves the right to amend or withdraw a quote prior to installation where:</p>
+                
+                <ul>
+                    <li>Eligibility under the VEU Program cannot be confirmed</li>
+                    <li>Site conditions materially differ from those assessed</li>
+                    <li>Regulatory requirements or rebate values change</li>
+                </ul>
+                
+                <p><strong>3.3</strong> Any changes requested by the Customer after acceptance may result in a revised quote.</p>
+                
+                <h2>4. Installation and Compliance</h2>
+                
+                <p><strong>4.1</strong> All upgrades will be installed by appropriately licensed and qualified persons in accordance with:</p>
+                
+                <ul>
+                    <li>VEU Program rules and guidelines</li>
+                    <li>Victorian Building Authority (VBA) requirements</li>
+                    <li>Energy Safe Victoria (ESV) regulations</li>
+                    <li>Relevant Australian Standards (AS/NZS)</li>
+                </ul>
+                
+                <p><strong>4.2</strong> Royal One will collect and retain all evidence required for VEEC creation, including photographs and compliance documentation.</p>
+                
+                <p><strong>4.3</strong> Existing equipment may be decommissioned in accordance with VEU requirements. Certain items may be left in place where removal is not required or practicable.</p>
+                
+                <p><strong>4.4</strong> Royal One is not responsible for:</p>
+                
+                <ul>
+                    <li>Pre-existing electrical, plumbing, or structural issues</li>
+                    <li>Hazardous materials including asbestos</li>
+                    <li>Insulation deficiencies or building defects</li>
+                </ul>
+                
+                <div class="page-break"></div>
+                
+                <ul>
+                    <li>Cosmetic or minor damage resulting from reasonable installation works</li>
+                </ul>
+                
+                <h2>5. Rebates, VEEC Assignment, and Customer Obligations</h2>
+                
+                <p><strong>5.1</strong> You irrevocably assign to Royal One or its nominated accredited partner all rights to create, register, and claim VEECs arising from the Upgrade.</p>
+                
+                <p><strong>5.2</strong> The value of VEECs forms part of the payment for the Goods and services provided.</p>
+                
+                <p><strong>5.3</strong> You must complete, sign, and return all documentation required under the VEU Program, including customer assignment and consent forms.</p>
+                
+                <p><strong>5.4</strong> If:</p>
+                
+                <ul>
+                    <li>Required documentation is not completed</li>
+                    <li>Eligibility criteria are not met</li>
+                    <li>Information provided by the Customer is false or misleading</li>
+                </ul>
+                
+                <p>Royal One reserves the right to invoice you for the full non-rebated cost of the Upgrade.</p>
+                
+                <p><strong>5.5</strong> If VEECs are rejected by the regulator for reasons attributable to the Customer, Royal One may recover the equivalent rebate value from you.</p>
+                
+                <h2>6. Payment</h2>
+                
+                <p><strong>6.1</strong> Any customer co-payment specified in the Quote must be paid in accordance with the agreed payment terms.</p>
+                
+                <p><strong>6.2</strong> Payments are deemed received only once cleared funds are received.</p>
+                
+                <h2>7. Warranties</h2>
+                
+                <p><strong>7.1</strong> Goods supplied are covered by the applicable manufacturer's warranty and any workmanship warranty stated in the Quote.</p>
+                
+                <p><strong>7.2</strong> Warranties do not apply where faults arise due to:</p>
+                
+                <ul>
+                    <li>Misuse, neglect, or lack of maintenance</li>
+                </ul>
+                
+                <div class="page-break"></div>
+                
+                <ul>
+                    <li>Modifications by third parties</li>
+                    <li>Environmental factors outside Royal One's control</li>
+                </ul>
+                
+                <h2>8. Title to Goods</h2>
+                
+                <p><strong>8.1</strong> Title to the Goods does not pass to the Customer until:</p>
+                
+                <ul>
+                    <li>All payments have been made in full, and</li>
+                    <li>All VEEC assignment obligations have been satisfied</li>
+                </ul>
+                
+                <h2>9. General</h2>
+                
+                <p><strong>9.1</strong> These Terms and Conditions apply to all energy efficiency upgrades performed by Royal One under the VEU Program.</p>
+                
+                <p><strong>9.2</strong> Royal One may amend these Terms and Conditions from time to time to reflect changes in legislation or program requirements. The version in effect at the time of installation will apply.</p>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-content">
                 <div>
                     <div class="footer-logo">
-                        <img src="./Logo.png" alt="Royal One Energy Solutions">
+                        <img src="./Logo.png" alt="Royal One Energy Solutions" loading="lazy">
                     </div>
                     
                     <p class="footer-tagline">
@@ -1859,8 +2249,8 @@
                         <ul>
                             <li><a href="#features">Why Choose Us</a></li>
                             <li><a href="#reviews">Customer Reviews</a></li>
-                            <li><a href="#contact">Contact Us</a></li>
-                            <li><a href="#careers">Careers</a></li>
+                            <li><a href="#privacy">Privacy Policy</a></li>
+                            <li><a href="#terms">Terms & Conditions</a></li>
                         </ul>
                     </div>
                     
@@ -1870,7 +2260,7 @@
                             <li><a href="#graph">Heating Savings</a></li>
                             <li><a href="#faq">FAQ</a></li>
                             <li><a href="#tips">Energy Saving Tips</a></li>
-                            <li><a href="#privacy" id="privacyLink">Privacy Policy</a></li>
+                            <li><a href="#contact">Contact Us</a></li>
                         </ul>
                     </div>
                 </div>
@@ -1883,6 +2273,14 @@
     </footer>
 
     <script>
+        // Configuration
+        const CONFIG = {
+            whatsappNumber: "+61433794469",
+            contactPhone: "+61 433 794 469",
+            contactEmail: "info@royaloneenergy.com.au",
+            storageKey: "royalone_form_data"
+        };
+        
         // DOM Elements
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
         const nav = document.getElementById('nav');
@@ -1894,21 +2292,26 @@
         const whatsappBtn = document.getElementById('whatsappBtn');
         const backToTop = document.getElementById('backToTop');
         const header = document.getElementById('header');
-        const privacyLink = document.getElementById('privacyLink');
-        
-        // WhatsApp Configuration
-        const WHATSAPP_NUMBER = "+61433794469";
+        const privacyLinks = document.querySelectorAll('.privacy-link');
+        const termsLinks = document.querySelectorAll('.terms-link');
+        const submitBtn = document.querySelector('.submit-btn');
         
         // Initialize
         document.addEventListener('DOMContentLoaded', function() {
             // Set current year
             currentYearSpan.textContent = new Date().getFullYear();
             
-            // Animate data bars on scroll
-            animateDataBars();
+            // Load saved form data
+            loadFormData();
             
-            // Initialize form validation
+            // Initialize animations
+            initializeAnimations();
+            
+            // Setup form validation
             setupFormValidation();
+            
+            // Animate data bars
+            animateDataBars();
         });
         
         // Mobile Menu Toggle
@@ -1962,46 +2365,71 @@
         });
         
         // Form Submission
-        eligibilityForm.addEventListener('submit', function(e) {
+        eligibilityForm.addEventListener('submit', async function(e) {
             e.preventDefault();
             
             if (validateForm()) {
+                // Save form data
+                saveFormData();
+                
                 // Show loading state
-                const submitBtn = this.querySelector('.submit-btn');
                 const originalText = submitBtn.innerHTML;
                 submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin" style="margin-right: 10px;"></i> Processing...';
+                submitBtn.classList.add('loading');
                 submitBtn.disabled = true;
                 
-                // Simulate API call
-                setTimeout(() => {
+                // Track form submission
+                trackFormSubmission('online');
+                
+                // Simulate API call (replace with actual API call)
+                try {
+                    await simulateApiCall();
+                    
                     // Show success modal
                     successModal.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                    
+                    // Clear saved form data
+                    localStorage.removeItem(CONFIG.storageKey);
                     
                     // Reset form
                     eligibilityForm.reset();
                     
+                } catch (error) {
+                    console.error('Form submission error:', error);
+                    alert('There was an error submitting your form. Please try again or use the WhatsApp option.');
+                } finally {
                     // Reset button
                     submitBtn.innerHTML = originalText;
+                    submitBtn.classList.remove('loading');
                     submitBtn.disabled = false;
-                }, 1500);
+                }
             }
         });
         
         // WhatsApp Submission
         whatsappBtn.addEventListener('click', function() {
             if (validateForm()) {
+                // Save form data
+                saveFormData();
+                
                 const formData = getFormData();
                 const message = formatWhatsAppMessage(formData);
                 const encodedMessage = encodeURIComponent(message);
-                const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`;
+                const whatsappUrl = `https://wa.me/${CONFIG.whatsappNumber}?text=${encodedMessage}`;
+                
+                // Track form submission
+                trackFormSubmission('whatsapp');
                 
                 // Open WhatsApp
                 window.open(whatsappUrl, '_blank');
                 
-                // Show success message
+                // Show success message after a delay
                 setTimeout(() => {
                     successModal.classList.add('active');
+                    document.body.style.overflow = 'hidden';
                     eligibilityForm.reset();
+                    localStorage.removeItem(CONFIG.storageKey);
                 }, 1000);
             }
         });
@@ -2009,19 +2437,44 @@
         // Close Modal
         closeModalBtn.addEventListener('click', function() {
             successModal.classList.remove('active');
+            document.body.style.overflow = '';
         });
         
-        // Close modal on outside click
+        // Close modal on outside click or Escape key
         successModal.addEventListener('click', function(e) {
             if (e.target === successModal) {
                 successModal.classList.remove('active');
+                document.body.style.overflow = '';
             }
         });
         
-        // Privacy Policy
-        privacyLink.addEventListener('click', function(e) {
-            e.preventDefault();
-            alert('Privacy Policy: Your information is secure with us. We only use your data to process your heating upgrade application and contact you about energy-efficient products. We never share your information with third parties without your consent.');
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && successModal.classList.contains('active')) {
+                successModal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+        
+        // Privacy Policy Links
+        privacyLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                window.scrollTo({
+                    top: document.getElementById('privacy').offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Terms & Conditions Links
+        termsLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                window.scrollTo({
+                    top: document.getElementById('terms').offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            });
         });
         
         // Smooth scrolling for anchor links
@@ -2042,7 +2495,51 @@
             });
         });
         
-        // Form Validation Functions
+        // Save form data on input
+        eligibilityForm.addEventListener('input', function() {
+            saveFormData();
+        });
+        
+        // Form Data Functions
+        function saveFormData() {
+            const formData = new FormData(eligibilityForm);
+            const data = {};
+            formData.forEach((value, key) => {
+                data[key] = value;
+            });
+            localStorage.setItem(CONFIG.storageKey, JSON.stringify(data));
+        }
+        
+        function loadFormData() {
+            const savedData = localStorage.getItem(CONFIG.storageKey);
+            if (savedData) {
+                try {
+                    const data = JSON.parse(savedData);
+                    Object.keys(data).forEach(key => {
+                        const field = eligibilityForm.querySelector(`[name="${key}"]`);
+                        if (field) {
+                            field.value = data[key];
+                            if (field.type === 'checkbox') {
+                                field.checked = data[key] === 'on' || data[key] === true;
+                            }
+                        }
+                    });
+                } catch (e) {
+                    console.error('Error loading form data:', e);
+                }
+            }
+        }
+        
+        function getFormData() {
+            const formData = new FormData(eligibilityForm);
+            const data = {};
+            formData.forEach((value, key) => {
+                data[key] = value;
+            });
+            return data;
+        }
+        
+        // Form Validation
         function setupFormValidation() {
             const requiredFields = document.querySelectorAll('input[required], select[required]');
             
@@ -2052,48 +2549,84 @@
                 });
                 
                 field.addEventListener('input', function() {
-                    if (this.value.trim()) {
-                        this.style.borderColor = '#28a745';
-                    } else {
-                        this.style.borderColor = '';
-                    }
+                    clearFieldError(this);
                 });
             });
         }
         
         function validateField(field) {
             const value = field.value.trim();
-            const isRequired = field.hasAttribute('required');
+            const formGroup = field.closest('.form-group');
             
-            if (isRequired && !value) {
-                field.style.borderColor = 'var(--error)';
+            // Clear previous error
+            clearFieldError(field);
+            
+            // Check required fields
+            if (field.hasAttribute('required') && !value) {
+                showFieldError(field, 'This field is required');
                 return false;
             }
             
+            // Email validation
             if (field.type === 'email' && value) {
                 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
                 if (!emailRegex.test(value)) {
-                    field.style.borderColor = 'var(--error)';
+                    showFieldError(field, 'Please enter a valid email address');
                     return false;
                 }
             }
             
+            // Postcode validation
             if (field.id === 'postcode' && value) {
                 const postcodeNum = parseInt(value);
                 if (isNaN(postcodeNum) || postcodeNum < 3000 || postcodeNum > 3999) {
-                    field.style.borderColor = 'var(--error)';
+                    showFieldError(field, 'Please enter a valid VIC postcode (3000-3999)');
                     return false;
                 }
             }
             
-            field.style.borderColor = '#28a745';
+            // Phone validation (basic)
+            if (field.id === 'phone' && value) {
+                const phoneRegex = /^[\d\s\-\+\(\)]{10,}$/;
+                if (!phoneRegex.test(value.replace(/\s/g, ''))) {
+                    showFieldError(field, 'Please enter a valid phone number');
+                    return false;
+                }
+            }
+            
             return true;
+        }
+        
+        function showFieldError(field, message) {
+            const formGroup = field.closest('.form-group');
+            formGroup.classList.add('error');
+            
+            let errorEl = formGroup.querySelector('.error-message');
+            if (!errorEl) {
+                errorEl = document.createElement('div');
+                errorEl.className = 'error-message';
+                formGroup.appendChild(errorEl);
+            }
+            errorEl.textContent = message;
+            errorEl.style.display = 'block';
+        }
+        
+        function clearFieldError(field) {
+            const formGroup = field.closest('.form-group');
+            if (formGroup) {
+                formGroup.classList.remove('error');
+                const errorEl = formGroup.querySelector('.error-message');
+                if (errorEl) {
+                    errorEl.style.display = 'none';
+                }
+            }
         }
         
         function validateForm() {
             let isValid = true;
             const requiredFields = document.querySelectorAll('input[required], select[required]');
             
+            // Validate all fields
             requiredFields.forEach(field => {
                 if (!validateField(field)) {
                     isValid = false;
@@ -2103,15 +2636,20 @@
             // Check consent checkbox
             const consentCheckbox = document.getElementById('consent');
             if (!consentCheckbox.checked) {
-                consentCheckbox.parentElement.style.color = 'var(--error)';
+                const consentGroup = consentCheckbox.closest('.checkbox-group');
+                consentGroup.style.color = 'var(--error)';
                 isValid = false;
+                
+                // Scroll to error
+                consentCheckbox.scrollIntoView({ behavior: 'smooth', block: 'center' });
             } else {
-                consentCheckbox.parentElement.style.color = '';
+                const consentGroup = consentCheckbox.closest('.checkbox-group');
+                consentGroup.style.color = '';
             }
             
+            // Scroll to first error
             if (!isValid) {
-                // Scroll to first error
-                const firstError = document.querySelector('[style*="border-color: var(--error)"]');
+                const firstError = document.querySelector('.form-group.error');
                 if (firstError) {
                     firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
                 }
@@ -2120,24 +2658,11 @@
             return isValid;
         }
         
-        function getFormData() {
-            return {
-                firstName: document.getElementById('firstName').value,
-                lastName: document.getElementById('lastName').value,
-                email: document.getElementById('email').value,
-                phone: document.getElementById('phone').value,
-                postcode: document.getElementById('postcode').value,
-                heaterType: document.getElementById('heaterType').value,
-                bedrooms: document.getElementById('bedrooms').value,
-                consent: document.getElementById('consent').checked
-            };
-        }
-        
         function formatWhatsAppMessage(data) {
-            return `*New Heating Upgrade Application*
+            return `*New Heating Upgrade Application - Royal One*
 
 *Customer Information:*
-• Name: ${data.firstName} ${data.lastName}
+• Name: ${data.firstName} ${data.lastName || ''}
 • Email: ${data.email}
 • Phone: ${data.phone}
 • Postcode: ${data.postcode}
@@ -2148,18 +2673,27 @@ ${data.heaterType}
 
 *Consent Given:* ${data.consent ? 'Yes' : 'No'}
 
-Please contact this customer to discuss VEU rebate eligibility for heating upgrade.`;
+Please contact this customer to discuss VEU rebate eligibility for heating upgrade.
+
+*Submitted via Website Form*`;
         }
         
         // Animation Functions
+        function initializeAnimations() {
+            // Initialize animated elements
+            document.querySelectorAll('.stat-card, .feature-card, .review-card').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            });
+        }
+        
         function animateDataBars() {
             const dataFills = document.querySelectorAll('.data-fill');
             dataFills.forEach(fill => {
-                // Store original width
                 const originalWidth = fill.style.width;
                 fill.style.width = '0%';
                 
-                // Animate after a delay
                 setTimeout(() => {
                     fill.style.transition = 'width 1.5s ease';
                     fill.style.width = originalWidth;
@@ -2168,7 +2702,7 @@ Please contact this customer to discuss VEU rebate eligibility for heating upgra
         }
         
         function animateOnScroll() {
-            const elements = document.querySelectorAll('.feature-card, .review-card, .stat-card');
+            const elements = document.querySelectorAll('.stat-card, .feature-card, .review-card');
             
             elements.forEach(element => {
                 const elementTop = element.getBoundingClientRect().top;
@@ -2177,21 +2711,42 @@ Please contact this customer to discuss VEU rebate eligibility for heating upgra
                 if (elementTop < window.innerHeight - elementVisible) {
                     element.style.opacity = '1';
                     element.style.transform = 'translateY(0)';
+                    element.classList.add('animated');
                 }
             });
         }
         
-        // Initialize animations
-        document.querySelectorAll('.feature-card, .review-card, .stat-card').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(20px)';
-            el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+        // Utility Functions
+        function simulateApiCall() {
+            return new Promise(resolve => {
+                setTimeout(() => {
+                    resolve({ success: true });
+                }, 1500);
+            });
+        }
+        
+        function trackFormSubmission(method) {
+            // You can integrate with Google Analytics or other tracking here
+            console.log(`Form submitted via ${method}`);
+            
+            // Example: Google Analytics event tracking
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'form_submission', {
+                    'event_category': 'lead_generation',
+                    'event_label': method,
+                    'value': 1
+                });
+            }
+        }
+        
+        // Print functionality
+        window.addEventListener('beforeprint', () => {
+            document.body.classList.add('printing');
         });
         
-        // Animate on load
-        setTimeout(() => {
-            animateOnScroll();
-        }, 300);
+        window.addEventListener('afterprint', () => {
+            document.body.classList.remove('printing');
+        });
     </script>
 </body>
 </html>

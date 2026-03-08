@@ -1,668 +1,967 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Royal One</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Royal One | Home</title>
+    <style>
+        :root {
+            --primary: #0c3b66;
+            --primary-dark: #082a49;
+            --accent: #2fa36b;
+            --accent-dark: #248454;
+            --gold: #d9b25f;
+            --bg: #f6f8fb;
+            --text: #1f2937;
+            --muted: #6b7280;
+            --white: #fff;
+            --border: #e5e7eb;
+            --shadow: 0 10px 30px rgba(12, 59, 102, .08);
+            --radius: 18px;
+            --container: 1180px;
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        html {
+            scroll-behavior: smooth
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            color: var(--text);
+            background: #fff;
+            line-height: 1.6
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit
+        }
+
+        img {
+            max-width: 100%;
+            display: block
+        }
+
+        .container {
+            width: min(92%, var(--container));
+            margin: 0 auto
+        }
+
+        .section {
+            padding: 48px 0
+        }
+
+        .center {
+            text-align: center
+        }
+
+        .section-title {
+            font-size: clamp(30px, 4vw, 44px);
+            line-height: 1.15;
+            margin: 0 0 14px;
+            color: var(--primary-dark)
+        }
+
+        .section-subtitle {
+            max-width: 760px;
+            color: var(--muted);
+            margin: 0 auto;
+            font-size: 17px
+        }
+
+        .topbar {
+            background: var(--primary-dark);
+            color: rgba(255, 255, 255, .92);
+            font-size: 14px
+        }
+
+        .topbar .wrap {
+            display: flex;
+            justify-content: space-between;
+            gap: 16px;
+            padding: 10px 0;
+            flex-wrap: wrap
+        }
+
+        .topbar .left,
+        .topbar .right {
+            display: flex;
+            gap: 18px;
+            flex-wrap: wrap;
+            align-items: center
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, .96);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid rgba(229, 231, 235, .8)
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 18px 0;
+            gap: 20px
+        }
+
+        .logo {
+            font-size: 30px;
+            font-weight: 800;
+            color: var(--primary);
+            letter-spacing: .5px
+        }
+
+        .logo span {
+            color: var(--accent)
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 26px;
+            align-items: center;
+            font-weight: 600;
+            color: #374151
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--primary)
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 24px;
+            border-radius: 999px;
+            font-weight: 700;
+            transition: .25s ease;
+            border: none;
+            cursor: pointer
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: #fff;
+            box-shadow: var(--shadow)
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-dark);
+            transform: translateY(-2px)
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: #fff;
+            border: 2px solid rgba(255, 255, 255, .24)
+        }
+
+        .hero {
+            background: linear-gradient(120deg, rgba(8, 42, 73, .92), rgba(12, 59, 102, .8)), url('https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1600&q=80') center/cover;
+            color: #fff
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.15fr .85fr;
+            gap: 36px;
+            align-items: center;
+            min-height: 84vh;
+            padding: 80px 0
+        }
+
+        .hero h1 {
+            font-size: clamp(42px, 6vw, 68px);
+            line-height: 1.03;
+            margin: 0 0 18px;
+            max-width: 760px
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: rgba(255, 255, 255, .88);
+            max-width: 640px;
+            margin: 0 0 28px
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+            margin-bottom: 28px
+        }
+
+        .hero-badges {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap
+        }
+
+        .badge {
+            background: rgba(255, 255, 255, .12);
+            border: 1px solid rgba(255, 255, 255, .12);
+            border-radius: 999px;
+            padding: 10px 14px;
+            font-size: 14px
+        }
+
+        .quote-card {
+            background: rgba(255, 255, 255, .96);
+            color: var(--text);
+            border-radius: 26px;
+            box-shadow: 0 18px 50px rgba(0, 0, 0, .18);
+            padding: 28px
+        }
+
+        .quote-card h3 {
+            margin: 0 0 10px;
+            font-size: 28px;
+            color: var(--primary-dark)
+        }
+
+        .quote-card p {
+            color: var(--muted);
+            font-size: 15px;
+            margin: 0 0 18px
+        }
+
+        .quote-card form {
+            display: grid;
+            gap: 12px
+        }
+
+        .quote-card input,
+        .quote-card select,
+        .quote-card textarea {
+            width: 100%;
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 14px 15px;
+            font: inherit;
+            outline: none;
+            background: #fff
+        }
+
+        .stats {
+            margin-top: -48px;
+            position: relative;
+            z-index: 5
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px
+        }
+
+        .stat {
+            background: #fff;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 28px 22px;
+            text-align: center;
+            border: 1px solid #eef2f7
+        }
+
+        .stat strong {
+            display: block;
+            font-size: 34px;
+            color: var(--primary);
+            margin-bottom: 6px
+        }
+
+        .stat span {
+            color: var(--muted)
+        }
+
+        .about-content {
+            max-width: 900px;
+            margin: 42px auto 0;
+            line-height: 1.8
+        }
+
+        .about-wrapper {
+            display: grid;
+            grid-template-columns: 1.1fr .9fr;
+            gap: 48px;
+            align-items: center;
+            margin: 42px 0
+        }
+
+        .about-content {
+            line-height: 1.8
+        }
+
+        .about-content p {
+            font-size: 17px;
+            color: var(--text);
+            margin: 0 0 20px;
+            text-align: left
+        }
+
+        .about-image {
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow)
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block
+        }
+
+        .about-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+            margin-top: 42px
+        }
+
+        .about-stat {
+            background: #fff;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 28px 22px;
+            text-align: center;
+            border: 1px solid #eef2f7
+        }
+
+        .about-stat strong {
+            display: block;
+            font-size: 28px;
+            color: var(--primary);
+            margin-bottom: 8px
+        }
+
+        .about-stat span {
+            color: var(--muted);
+            font-size: 15px
+        }
+
+        .services {
+            background: var(--bg)
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 42px
+        }
+
+        .card {
+            background: #fff;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            border: 1px solid #eef2f7;
+            transition: .25s ease
+        }
+
+        .card:hover {
+            transform: translateY(-6px)
+        }
+
+        .card-image {
+            height: 220px;
+            background-size: cover;
+            background-position: center
+        }
+
+        .card-body {
+            padding: 24px
+        }
+
+        .eyebrow {
+            display: inline-block;
+            background: rgba(47, 163, 107, .1);
+            color: var(--accent-dark);
+            font-weight: 700;
+            padding: 7px 12px;
+            border-radius: 999px;
+            font-size: 13px;
+            margin-bottom: 12px
+        }
+
+        .card h3 {
+            margin: 0 0 10px;
+            font-size: 25px;
+            color: var(--primary-dark)
+        }
+
+        .card p {
+            margin: 0 0 18px;
+            color: var(--muted)
+        }
+
+        .link-arrow {
+            color: var(--primary);
+            font-weight: 700
+        }
+
+        .process {
+            background: var(--bg)
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 22px;
+            margin-top: 42px
+        }
+
+        .process-card {
+            background: #fff;
+            padding: 26px 22px;
+            border-radius: 22px;
+            box-shadow: var(--shadow)
+        }
+
+        .process-number {
+            width: 54px;
+            height: 54px;
+            border-radius: 16px;
+            display: grid;
+            place-items: center;
+            font-weight: 800;
+            color: #fff;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            margin: 0 auto 16px;
+            font-size: 20px
+        }
+
+        .process-card h3 {
+            margin: 0 0 8px;
+            color: var(--primary-dark)
+        }
+
+        .process-card p {
+            margin: 0;
+            color: var(--muted)
+        }
+
+        .carousel {
+            position: relative;
+            max-width: 800px;
+            margin: 42px auto 0;
+            overflow: hidden
+        }
+
+        .carousel-container {
+            display: flex;
+            transition: transform 0.5s ease
+        }
+
+        .review {
+            min-width: 100%;
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 22px;
+            padding: 26px;
+            box-shadow: var(--shadow);
+            flex-shrink: 0
+        }
+
+        .prev,
+        .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--primary);
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            font-size: 18px;
+            cursor: pointer;
+            z-index: 10;
+            transition: background 0.3s
+        }
+
+        .prev:hover,
+        .next:hover {
+            background: var(--primary-dark)
+        }
+
+        .prev {
+            left: -50px
+        }
+
+        .next {
+            right: -50px
+        }
+
+        .dots {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--muted);
+            cursor: pointer;
+            transition: background 0.3s
+        }
+
+        .dot.active {
+            background: var(--primary)
+        }
+
+        .dot:hover {
+            background: var(--primary-dark)
+        }
+
+        .stars {
+            color: var(--gold);
+            font-size: 18px;
+            letter-spacing: 2px;
+            margin-bottom: 12px
+        }
+
+        .review p {
+            color: var(--muted);
+            margin: 0 0 16px
+        }
+
+        .review strong {
+            color: var(--primary-dark)
+        }
+
+        footer {
+            background: #071f34;
+            color: rgba(255, 255, 255, .9);
+            padding: 70px 0 22px
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
+            gap: 28px;
+            padding-bottom: 28px;
+            border-bottom: 1px solid rgba(255, 255, 255, .1)
+        }
+
+        .footer-col h4 {
+            margin: 0 0 16px;
+            color: #fff;
+            font-size: 18px
+        }
+
+        .footer-col ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: grid;
+            gap: 10px
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            gap: 16px;
+            flex-wrap: wrap;
+            padding-top: 20px;
+            font-size: 14px;
+            color: rgba(255, 255, 255, .58)
+        }
+
+        @media (max-width:1080px) {
+
+            .hero-grid,
+            .footer-grid,
+            .about-wrapper {
+                grid-template-columns: 1fr
+            }
+
+            .card-grid {
+                grid-template-columns: repeat(2, 1fr)
+            }
+
+            .about-stats {
+                grid-template-columns: repeat(2, 1fr)
+            }
+
+            .process-grid,
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr)
+            }
+        }
+
+        @media (max-width:760px) {
+            .nav-links {
+                display: none
+            }
+
+            .card-grid,
+            .process-grid,
+            .stats-grid,
+            .about-stats {
+                grid-template-columns: 1fr
+            }
+
+            .prev,
+            .next {
+                left: 10px;
+                right: auto
+            }
+
+            .next {
+                left: auto;
+                right: 10px
+            }
+
+            .topbar .wrap,
+            .topbar .left,
+            .topbar .right {
+                justify-content: center
+            }
+
+            .section {
+                padding: 48px 0
+            }
+        }
+    </style>
 </head>
 
 <body>
-
-    <!--navbar -->
-    <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
-        <div class="container-fluid mx-lg-5 mx-md-5">
-            <a class="navbar-brand me-auto" href="index.html"></a>
-            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
-                aria-labelledby="offcanvasNavbarLabel">
-                <div class="offcanvas-header">
-                    <h5 class="offcanvas-title font-white" id="offcanvasNavbarLabel">Offcanvas</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    <div class="topbar">
+        <div class="container wrap">
+            <div class="left"><span>📞 (03) 9000 0000</span><span>✉️ info@royalone.com.au</span></div>
+            <div class="right"><span>📍 Melbourne, Victoria</span><span>Heating, hot water, solar and battery
+                    upgrades</span></div>
+        </div>
+    </div>
+    <header>
+        <div class="container navbar">
+            <a href="index.html" class="logo">Royal <span>One</span></a>
+            <nav class="nav-links">
+                <a class="active" href="index.html">Home</a>
+                <a href="air-conditioning.html">Air Conditioning</a>
+                <a href="heat-pump.html">Heat Pump</a>
+                <a href="solar.html">Solar</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+            <a href="contact.html" class="btn btn-primary">Get a Quote</a>
+        </div>
+    </header>
+    <section class="hero">
+        <div class="container hero-grid">
+            <div>
+                <h1>Royal One Energy Solutions for Victorian Homes</h1>
+                <p>Build a strong first impression with a modern multi-page website for air conditioning, heat pump hot
+                    water, solar and battery solutions.</p>
+                <div class="hero-actions">
+                    <a href="air-conditioning.html" class="btn btn-primary">Explore Services</a>
+                    <a href="contact.html" class="btn btn-outline">Request a Quote</a>
                 </div>
-                <div class="offcanvas-body">
-                    <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
-                        <li class="nav-item">
-                            <a class="nav-link active mx-lg-2" aria-current="page" href="index.html">Home</a>
-                        </li>
-                        <li class="nav-item dropdown mx-lg-2">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                aria-expanded="false">
-                                Residential Products
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="airconditioner.html">Air Conditioner</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="heatpumps.html">Heat Pumps</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link mx-lg-2" href="about.html">About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link mx-lg-2" href="contact.html">Contact</a>
-                        </li>
+                <div class="hero-badges">
+                    <span class="badge">Fast quote support</span>
+                    <span class="badge">Compliance-focused process</span>
+                    <span class="badge">Residential & commercial</span>
+                </div>
+            </div>
+            <div class="quote-card">
+                <h3>Quick Enquiry</h3>
+                <p>Use this as a homepage lead form. Connect it to your CRM or email service later.</p>
+                <form>
+                    <input type="text" placeholder="Full name" />
+                    <input type="tel" placeholder="Phone number" />
+                    <input type="email" placeholder="Email address" />
+                    <select>
+                        <option selected disabled>Select service</option>
+                        <option>Air Conditioning</option>
+                        <option>Heat Pump Hot Water</option>
+                        <option>Solar</option>
+                        <option>Battery</option>
+                    </select>
+                    <textarea rows="4" placeholder="Tell us about your property"></textarea>
+                    <button class="btn btn-primary" type="button">Submit Enquiry</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <section class="stats">
+        <div class="container stats-grid">
+            <div class="stat"><strong>5,000+</strong><span>Customer enquiries supported</span></div>
+            <div class="stat"><strong>End-to-End</strong><span>Sales, install and admin coordination</span></div>
+            <div class="stat"><strong>Victoria</strong><span>Focused local service coverage</span></div>
+            <div class="stat"><strong>Fast</strong><span>Quote and follow-up workflow</span></div>
+        </div>
+    </section>
+    <section class="section services">
+        <div class="container">
+            <div class="center">
+                <h2 class="section-title">Our Core Services</h2>
+                <p class="section-subtitle">A clean homepage inspired by strong service-based layouts, rebuilt for Royal
+                    One as an original design.</p>
+            </div>
+            <div class="card-grid">
+                <article class="card">
+                    <div class="card-image"
+                        style="background-image:url('https://images.unsplash.com/photo-1581092921461-eab10380d70a?auto=format&fit=crop&w=1200&q=80')">
+                    </div>
+                    <div class="card-body"><span class="eyebrow">Heating & Cooling</span>
+                        <h3>Air Conditioning</h3>
+                        <p>Our split and ducted air conditioning systems meet Victorian government energy efficiency standards. Designed for optimal comfort, they provide efficient heating in winter and cooling in summer, helping reduce energy costs year-round.</p><a class="link-arrow" href="air-conditioning.html">Explore now ></a>
+                    </div>
+                </article>
+                <article class="card">
+                    <div class="card-image"
+                        style="background-image:url('https://images.unsplash.com/photo-1585704032915-c3400ca199e7?auto=format&fit=crop&w=1200&q=80')">
+                    </div>
+                    <div class="card-body"><span class="eyebrow">Efficient Hot Water</span>
+                        <h3>Heat Pump Systems</h3>
+                        <p>Our heat pump hot water systems are compliant with Victorian energy rebate programs. They offer efficient, eco-friendly hot water solutions that significantly lower utility bills while providing reliable performance.</p><a class="link-arrow" href="heat-pump.html">Explore now ></a>
+                    </div>
+                </article>
+                <article class="card">
+                    <div class="card-image"
+                        style="background-image:url('https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1200&q=80')">
+                    </div>
+                    <div class="card-body"><span class="eyebrow">Renewable Energy</span>
+                        <h3>Solar & Battery</h3>
+                        <p>Our solar power and battery storage systems are fully compliant with Victorian government rebate programs. Designed to reduce grid reliance, they help lower electricity bills and make homes more sustainable with clean, renewable energy.</p><a class="link-arrow" href="solar.html">Explore now ></a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+    <section class="section process">
+        <div class="container center">
+            <h2 class="section-title">How It Works</h2>
+            <p class="section-subtitle">Keep the process simple, visual and easy to understand.</p>
+            <div class="process-grid">
+                <div class="process-card">
+                    <div class="process-number">1</div>
+                    <h3>Enquire</h3>
+                    <p>Customer submits an online or phone enquiry.</p>
+                </div>
+                <div class="process-card">
+                    <div class="process-number">2</div>
+                    <h3>Assess</h3>
+                    <p>Royal One reviews the property and recommends suitable options.</p>
+                </div>
+                <div class="process-card">
+                    <div class="process-number">3</div>
+                    <h3>Install</h3>
+                    <p>Qualified teams complete the upgrade with scheduling support.</p>
+                </div>
+                <div class="process-card">
+                    <div class="process-number">4</div>
+                    <h3>Support</h3>
+                    <p>Provide handover information and after-sales communication.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section">
+        <div class="container center">
+            <h2 class="section-title">Customer Reviews</h2>
+            <p class="section-subtitle">Replace these sample reviews with your real Google reviews later.</p>
+            <div class="carousel">
+                <div class="carousel-container">
+                    <div class="review active">
+                        <div class="stars">★★★★★</div>
+                        <p>Great communication, smooth installation process and helpful support from start to finish.</p>
+                        <strong>Sample Customer</strong>
+                    </div>
+                    <div class="review">
+                        <div class="stars">★★★★★</div>
+                        <p>The whole job felt organised and professional. Very happy with the service and follow-up.</p>
+                        <strong>Sample Customer</strong>
+                    </div>
+                    <div class="review">
+                        <div class="stars">★★★★★</div>
+                        <p>They explained the upgrade clearly and helped us choose the right option for our home.</p>
+                        <strong>Sample Customer</strong>
+                    </div>
+                </div>
+                <button class="prev">&lt;</button>
+                <button class="next">&gt;</button>
+                <div class="dots">
+                    <span class="dot active" data-index="0"></span>
+                    <span class="dot" data-index="1"></span>
+                    <span class="dot" data-index="2"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section">
+        <div class="container">
+            <div class="center">
+                <h2 class="section-title">About Royal One</h2>
+                <p class="section-subtitle">Delivering affordable energy efficiency improvements for Victorian homes and businesses.</p>
+            </div>
+            <div class="about-wrapper">
+                <div class="about-content">
+                    <p>Royal One is a VEU (Victorian Energy Upgrades) Accredited Provider committed to helping Victorians reduce their energy bills and greenhouse gas emissions. We participate in government-backed energy efficiency programs to deliver sustainable solutions that are more affordable for consumers and reduce long-term energy consumption.</p>
+                    <p>With over 5,000+ Victorian residents trusting us for their energy needs, we have established ourselves as a leading provider of premium air conditioning, heat pump, solar, and battery storage solutions. Our mission is to make energy efficiency accessible and affordable for every household and business across Victoria.</p>
+                    <p>Today, Royal One continues this commitment by providing comprehensive home heating and cooling systems, solar panels, and battery storage solutions. We help Victorians embrace sustainable energy independence while significantly reducing their utility costs and environmental impact.</p>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?auto=format&fit=crop&w=600&q=80" alt="Royal One Energy Solutions" />
+                </div>
+            </div>
+            <div class="about-stats">
+                <div class="about-stat">
+                    <strong>5,000+</strong>
+                    <span>Victorian Residents Served</span>
+                </div>
+                <div class="about-stat">
+                    <strong>VEU Accredited</strong>
+                    <span>Government-Backed Provider</span>
+                </div>
+                <div class="about-stat">
+                    <strong>End-to-End</strong>
+                    <span>Sales, Installation & Support</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="logo" style="color:#fff;margin-bottom:14px">Royal <span
+                            style="color:var(--gold)">One</span></div>
+                    <p>Premium energy upgrade solutions across Victoria.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Pages</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="air-conditioning.html">Air Conditioning</a></li>
+                        <li><a href="heat-pump.html">Heat Pump</a></li>
+                        <li><a href="solar.html">Solar</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li>(03) 9000 0000</li>
+                        <li>info@royalone.com.au</li>
+                        <li>Melbourne, Victoria</li>
                     </ul>
                 </div>
             </div>
-            <a href="consentform.html" class="green-button navbar-button-toggle">Contact Us for a Quote</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
-                aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+            <div class="footer-bottom"><span>© 2026 Royal One. All rights reserved.</span><span>Multi-page website
+                    template</span></div>
         </div>
-    </nav>
-    <!--end navbar -->
-
-    <!--Landing page Image
-    <section class="landing-page mt-5">
-        <div class="container d-flex align-items-center justify-content-center flex-column">
-            <div class="row">
-                <div class="d-flex justify-content-center align-items-center flex-column">
-                    <h1 class="py-2 text-white">Sustainable Living.</h1>
-                    <h1 class="py-1 text-white">Affordable Solutions.</h1>
-
-                    <h4 class="py-4 text-white text-center">Royal One, Australia's leading energy services provider,
-                        enabling our customers to save millions on energy costs and reduce CO² emissions by over 30,000
-                        tonnes.</h4>
-
-                </div>
-            </div>
-        </div>
-    </section>-->
-    <!-- end Landing page Image-->
-
-    <!-- ======= Hero Section ======= -->
-    <section id="hero" class="d-flex align-items-center">
-        <div class="container" data-aos="zoom-out" data-aos-delay="100">
-            <h1>Welcome to <span class="text-success">Royal One</span></h1>
-            <h2>Australia's leading energy services provider,
-                enabling our customers to save millions on energy costs and reduce CO² emissions by over 30,000
-                tonnes.</h2>
-        </div>
-    </section><!-- End Hero -->
-
-
-    <!--Upgrade and form-->
-
-    <section class="bg-light pt-5">
-        <div class="container">
-            <div class="row d-flex align-items-center justify-content-center">
-
-                <div class="col-12 col-lg-6 text-center text-dark container">
-                    <h3 class="text-green text-center">Our dedication to energy upgrades, cost savings, and
-                        eco-sustainability.</h3>
-
-                    <div class="row">
-                        <div class="py-4 col-lg-3 d-flex align-items-center flex-column">
-
-                            <h5 class="text-center">Certified Trades Team</h5>
-                            <p class="py-2">100% Australian-owned, specializing in sustainability. Our qualified
-                                professionals
-                                boast
-                                an excellent track record in customer satisfaction.</p>
-
-                            <div class="icon-wrapper py-1">
-                                <img class="img img-shape" src="assets/certificate-solid.svg" alt="">
-                            </div>
-
-
-                        </div>
-                        <div class="py-4 col-lg-3 d-flex align-items-center flex-column">
-
-                            <h5 class="text-center">Complete Royal One Asset Management</h5>
-                            <p class="py-2">Offering comprehensive green energy solutions, our services include
-                                heating/cooling, and efficient hot water systems. </p>
-                            <div class="icon-wrapper py-1">
-                                <img class="img img-shape" src="assets/lightbulb-regular.svg" alt="">
-                            </div>
-
-                        </div>
-                        <div class="py-4 col-lg-3 d-flex align-items-center flex-column">
-
-                            <h5 class="text-center">Government Approved Products and Warranties</h5>
-                            <p class="py-2">We use only highly efficient, industry-leading products with excellent
-                                warranties, all approved and certified for Government programs.</p>
-                            <div class="icon-wrapper py-1">
-                                <img class="img img-shape" src="assets/bag-shopping-solid.svg" alt="">
-                            </div>
-
-                        </div>
-                        <div class="py-4 col-lg-3 d-flex align-items-center flex-column ">
-                            <h5 class="text-center">After-sales Support</h5>
-                            <p class="py-2">From initial discussions to installation and after-sales support, we
-                                provide an A-Z service, ensuring a world-class experience and top-notch service.</p>
-                            <div class="icon-wrapper py-1">
-                                <img class="img img-shape" src="assets/shield-solid.svg" alt="">
-                            </div>
-
-                        </div>
-                    </div>
-
-
-                </div>
-                <div class="col-12 col-lg-6 my-3">
-                    <div class="form p-4 text-white fs-5">
-                        <h2 class="text-center">FREE ENERGY ASSESSMENT</h2>
-                        <p class="py-2">Fill in this form to receive more information about suitable energy upgrade
-                            for your homes/business.</p>
-                        <form id="assessmentForm" name="submit-to-google-sheet"
-                            data-script="https://script.google.com/macros/s/AKfycbyVvTMlLGvFywFYYNUStNSSXpd3zZaqIYPlmJnxgz8xkN_gmlFy3xaHCuYDFenTueLdWg/exec"
-                            target="gsheet_iframe" class="row g-3">
-
-                            <input type="hidden" name="form_name" value="Free Energy Assessment">
-
-                            <div class="col-12">
-                                <label class="form-label">Business Name</label>
-                                <input type="text" class="form-control" name="business_name"
-                                    placeholder="Business Name">
-                            </div>
-
-                            <div class="col-md-6">
-                                <label class="form-label">First Name</label>
-                                <input type="text" class="form-control" name="first_name" placeholder="First Name*"
-                                    required>
-                            </div>
-
-                            <div class="col-md-6">
-                                <label class="form-label">Last Name</label>
-                                <input type="text" class="form-control" name="last_name" placeholder="Last Name*"
-                                    required>
-                            </div>
-
-                            <div class="col-md-6">
-                                <label class="form-label">Email</label>
-                                <input type="email" class="form-control" name="email" placeholder="Email*" required>
-                            </div>
-
-                            <div class="col-md-6">
-                                <label class="form-label">Phone</label>
-                                <input type="tel" class="form-control" name="phone" placeholder="Phone">
-                            </div>
-
-                            <div class="col-md-6">
-                                <label class="form-label">State</label>
-                                <select class="form-select" name="state" required>
-                                    <option value="">Choose...</option>
-                                    <option>VIC</option>
-                                    <option>NSW</option>
-                                    <option>QLD</option>
-                                    <option>SA</option>
-                                    <option>WA</option>
-                                    <option>TAS</option>
-                                    <option>ACT</option>
-                                    <option>NT</option>
-                                </select>
-                            </div>
-
-                            <div class="col-md-6">
-                                <label class="form-label">Postcode</label>
-                                <input type="text" class="form-control" name="postcode" placeholder="e.g. 3000"
-                                    pattern="\d{4}">
-                            </div>
-
-                            <!-- Honeypot -->
-                            <input type="text" name="website" tabindex="-1" autocomplete="off"
-                                style="position:absolute; left:-9999px; opacity:0">
-
-                            <div class="col-12 text-center">
-                                <button type="submit" class="assessment-button">Submit</button>
-                            </div>
-                        </form>
-
-
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
-    </section>
-
-    <!--end Upgrade-->
-
-    <!--Products
-    <section class="green-bg py-4">
-        <h2 class="text-center fs-2 text-white my-2">Our Sustainable Products</h2>
-
-        <div class="container">
-            <div class="row">
-
-                <div class="col-12 col-lg-6 d-flex justify-content-center align-items-center order-2">
-                    <img class="img" src="assets/aircon.png" alt="">
-                </div>
-
-                <div class="col-12 col-lg-6 d-flex justify-content-center align-items-center flex-column order-1">
-                    <h2>Split System Air conditioner</h2>
-                    <h5>Designed to redefine your indoor climate, our systems bring together unparalleled cooling
-                        performance and energy efficiency. Say goodbye to the sweltering heat and hello to the perfect
-                        balance of comfort and savings.</h5>
-                </div>
-
-
-
-            </div>
-
-            <div class="row">
-
-                <div class="col-12 col-lg-6 d-flex justify-content-center align-items-center flex-column order-1">
-                    <h2>Heat Pump</h2>
-                    <h5>Embark on a journey to year-round comfort and savings with our advanced Heat Pump systems,
-                        seamlessly blending powerful heating and cooling capabilities to keep your space cozy while
-                        cutting down on energy costs.</h5>
-
-                </div>
-
-                <div class="col-12 col-lg-6 d-flex justify-content-center align-items-center order-2">
-                    <div class="img-wrapper">
-                        <img class="img" src="assets/water-pump.png" alt="">
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-    </section>
- -->
-
-    <!--what we offer-->
-
-    <section class="green-bg py-4">
-
-        <div class="container">
-            <div class="row py-2">
-
-                <div
-                    class="col-12 col-lg-6 d-flex justify-content-center align-items-center flex-column order-lg-1 text-white more">
-                    <h2 class="py-2">Upgrade Water Heating</h2>
-                    <h5>Is your hot water system draining your energy bills? You could be eligible for up to $3,000 in
-                        Government incentives by upgrading your old gas, electric, solar, or instantaneous unit to a
-                        high-efficiency heat pump — cutting costs, saving energy, and powering a greener home.</h5>
-                    <a class="more-button button" href="heatpumps.html">Learn More</a>
-                </div>
-
-                <div class="col-12 col-lg-6 d-flex justify-content-center align-items-center order-lg-2">
-                    <div class="img-wrapper py-2">
-                        <img class="img img-shape" src="assets/Hot-Water-Heat-Pumps.jpg" alt="">
-                    </div>
-                </div>
-
-
-            </div>
-
-            <div class="row pt-5">
-
-                <div
-                    class="col-12 col-lg-6 d-flex justify-content-center align-items-center flex-column order-lg-2 text-white more">
-                    <h2 class="py-2">Upgrade Heating & Cooling</h2>
-                    <h5>Slash your energy bills by up to 80% with the Victorian Energy Upgrades program! Upgrade from
-                        outdated gas or electric systems to a cutting-edge reverse cycle air conditioner and experience
-                        powerful comfort, smarter efficiency, and long-term savings for your home.</h5>
-                    <a class="more-button button" href="airconditioner.html">Learn More</a>
-
-                </div>
-
-                <div class="col-12 col-lg-6 d-flex justify-content-center align-items-center order-lg-1">
-                    <div class="img-wrapper py-2">
-                        <img class="img img-shape" src="assets/air-conditioner-woman.png" alt="">
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-    </section>
-
-    <!--what we offer-->
-
-
-
-
-    <!--About Us-->
-
-    <section class="bg-light py-5">
-
-        <div class="container">
-            <div class="row">
-
-                <div
-                    class="col-12 col-lg-6 d-flex justify-content-center align-items-center flex-column p-3 order-lg-2">
-                    <h4 class="py-2 text-">At Royal One, we take pride in being an Accredited Certificate Provider for
-                        the
-                        Victorian Energy Upgrades program, enabling us to facilitate VEU initiatives and offer appealing
-                        funding and grant opportunities to support energy-saving endeavors.</h4>
-
-                    <p class="py-1 text">As an Australian-owned and operated company deeply entrenched in the renewable
-                        energy and energy efficiency sectors, we specialize in guiding businesses and households through
-                        the transition to energy-efficient lighting solutions.</p>
-                    <p class="py-1 text">With a dedicated focus on Victoria, we have crafted a comprehensive solution
-                        and
-                        service portfolio, driven by our commitment to playing an active role in achieving our nation's
-                        ambitious target of a 65% reduction in carbon emissions by 2030 through impactful energy
-                        upgrades.</p>
-                </div>
-
-                <div class="col-12 col-lg-6 d-flex justify-content-center align-items-center order-lg-1">
-                    <div class="img-wrapper-about">
-                        <img src="assets/renewable-energy.jpg" class="img img-shape" alt="">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!--end About Us-->
-
-    <!--Rebate and incentives-->
-
-    <section class="green-bg py-4">
-
-        <h2 class="text-center text-white py-2">Rebates & Incentives</h2>
-
-        <div class="container d-flex justify-content-center align-items-center flex-column">
-            <div class="row py-2">
-
-                <div class="col-12 col-lg-4 d-flex justify-content-center align-items-center flex-column text-white ">
-                    <div class="rebate-wrapper">
-                        <img src="assets/veu-logo.png" class="img img-shape" alt="">
-                    </div>
-                    <h4 class="py-2 text-center">VEU Heating & Cooling system discounts</h4>
-                    <p>When installing an efficient room-reverse cycle air conditioner, there are several upgrade
-                        options and corresponding discounts available.The final installed price, including the discount,
-                        varies depending on the certificate price, location, installation costs, and the accredited
-                        provider’s administrative fees.</p>
-
-
-                </div>
-                <div class="col-12 col-lg-4 d-flex justify-content-center align-items-center flex-column text-white ">
-                    <div class="rebate-wrapper">
-                        <img src="assets/veu-logo.png" class="img img-shape" alt="">
-                    </div>
-                    <h4 class="py-2 text-center">VEU Hot Water System Upgrade</h4>
-                    <p>Under the Victorian Energy Upgrades (VEU) program for businesses, the government offers rebates
-                        for replacing existing electric hot water systems with new heat pump hot water systems. While
-                        Victorian businesses can upgrade their hot water systems for free, homeowners are eligible for
-                        rebates of up to $3,000 under this scheme.</p>
-
-                </div>
-                <div class="col-12 col-lg-4 d-flex justify-content-center align-items-center flex-column text-white ">
-                    <div class="rebate-wrapper">
-                        <img src="assets/australian-regulator.jpg" class="img img-shape" alt="">
-                    </div>
-                    <h4 class="py-2 text-center">Small Scale Technology Certificates (STC’s)</h4>
-                    <p>Small-scale Technology Certificates (STCs) offer substantial benefits to residential solar buyers
-                        in Australia. These certificates act as a government-backed financial incentive, significantly
-                        reducing the upfront cost of installing a solar power system and making the switch to renewable
-                        energy more affordable for homeowners.</p>
-
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <!--Rebate and incentives -->
-
-
-
-    <!--Contact us-->
-
-    <section class="py-3 bg-light">
-
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 p-4">
-                    <div class="form p-4 text-white fs-5">
-                        <h2 class="text-center">CONTACT US</h2>
-                        <p class="py-2">Unsure about how to get started? Leave Us a Message.</p>
-                        <form id="contactForm" name="submit-to-google-sheet"
-                            data-script="https://script.google.com/macros/s/AKfycbyVvTMlLGvFywFYYNUStNSSXpd3zZaqIYPlmJnxgz8xkN_gmlFy3xaHCuYDFenTueLdWg/exec"
-                            target="gsheet_iframe" class="row g-3">
-
-                            <input type="hidden" name="form_name" value="Contact Us">
-
-                            <div class="col-md-6">
-                                <label class="form-label">First Name</label>
-                                <input type="text" class="form-control" name="first_name" placeholder="First Name*"
-                                    required>
-                            </div>
-
-                            <div class="col-md-6">
-                                <label class="form-label">Last Name</label>
-                                <input type="text" class="form-control" name="last_name" placeholder="Last Name*"
-                                    required>
-                            </div>
-
-                            <div class="col-md-6">
-                                <label class="form-label">Email</label>
-                                <input type="email" class="form-control" name="email" placeholder="Email*" required>
-                            </div>
-
-                            <div class="col-md-6">
-                                <label class="form-label">Phone</label>
-                                <input type="tel" class="form-control" name="phone" placeholder="Phone">
-                            </div>
-
-                            <div class="col-12">
-                                <label class="form-label">Message</label>
-                                <textarea class="form-control" rows="5" name="message" placeholder="Your message..."
-                                    required></textarea>
-                            </div>
-
-                            <!-- Honeypot -->
-                            <input type="text" name="website" tabindex="-1" autocomplete="off"
-                                style="position:absolute; left:-9999px; opacity:0">
-
-                            <div class="col-12 text-center">
-                                <button type="submit" class="assessment-button">Submit</button>
-                            </div>
-                        </form>
-
-                    </div>
-                </div>
-                <div class="col-lg-6 d-flex justify-content-center align-items-center flex-column">
-                    <h4 class="py-4">OUR LOCATION</h4>
-                    <div class="map-wrapper d-flex justify-content-center align-items-center flex-column">
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6311.370596691544!2d144.9583925!3d-37.7270641!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad65b327e100f8f%3A0x28b265d27df0432a!2s89-91%20Bakers%20Rd%2C%20Coburg%20North%20VIC%203058!5e0!3m2!1sen!2sau!4v1759201583329!5m2!1sen!2sau"
-                            width="450" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade"></iframe>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
-    </section>
-
-    <!--end Contact Us-->
-
-
-
-
-
-
-
-
-
-    <div>
-        <!-- Footer -->
-        <footer class="text-center text-lg-start text-dark" style="background-color: #ECEFF1">
-            <!-- Section: Social media -->
-            <section class="d-flex justify-content-between p-4 text-white" style="background-color: #21D192">
-                <!-- Left -->
-                <div class="me-5">
-                </div>
-                <!-- Left -->
-
-                <!-- Right 
-                <div>
-                    <a href="" class="text-white me-4">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
-                    <a href="" class="text-white me-4">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                    <a href="" class="text-white me-4">
-                        <i class="fab fa-google"></i>
-                    </a>
-                    <a href="" class="text-white me-4">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    <a href="" class="text-white me-4">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                    <a href="" class="text-white me-4">
-                        <i class="fab fa-github"></i>
-                    </a>
-                </div>
-
-                -->
-
-            </section>
-            <!-- Section: Social media -->
-
-            <!-- Section: Links  -->
-            <section class="">
-                <div class="container text-center text-md-start mt-5">
-                    <!-- Grid row -->
-                    <div class="row mt-3">
-                        <!-- Grid column -->
-                        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-                            <!-- Content -->
-                            <h6 class="text-uppercase fw-bold">
-
-                                <img class="logo-wrapper" src="assets/ROYAL ONE logo.png" alt="">
-
-                            </h6>
-                            <hr class="mb-4 mt-0 d-inline-block mx-auto"
-                                style="width: 60px; background-color: #7c4dff; height: 2px" />
-                            <p>
-                                Royal One is proud to be an Accredited Certificate Provider for the Victorian Energy
-                                Upgrades (VEU) program, offering attractive funding and grants for energy-saving
-                                activities. Our unique solutions and services are designed to maximize participation and
-                                efficiency in energy conservation.
-                            </p>
-                        </div>
-                        <!-- Grid column -->
-
-                        <!-- Grid column -->
-                        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-                            <!-- Links -->
-                            <h6 class="text-uppercase fw-bold">Your Home</h6>
-                            <hr class="mb-4 mt-0 d-inline-block mx-auto"
-                                style="width: 60px; background-color: #7c4dff; height: 2px" />
-                            <p>
-                                <a href="airconditioner.html" class="text-dark">Air conditioner</a>
-                            </p>
-                            <p>
-                                <a href="heatpumps.html" class="text-dark">Heat Pump</a>
-                            </p>
-
-                        </div>
-                        <!-- Grid column -->
-
-                        <!-- Grid column -->
-                        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-                            <!-- Links -->
-                            <h6 class="text-uppercase fw-bold">Quick links</h6>
-                            <hr class="mb-4 mt-0 d-inline-block mx-auto"
-                                style="width: 60px; background-color: #7c4dff; height: 2px" />
-                            <p>
-                                <a href="index.html" class="text-dark">Home</a>
-                            </p>
-                            <p>
-                                <a href="about.html" class="text-dark">About</a>
-                            </p>
-                            <p>
-                                <a href="contact.html" class="text-dark">Contact</a>
-                            </p>
-                            <p>
-                                <a href="consentform.html" class="text-dark">Consent form</a>
-                            </p>
-
-                        </div>
-                        <!-- Grid column -->
-
-                        <!-- Grid column -->
-                        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-                            <!-- Links -->
-                            <h6 class="text-uppercase fw-bold">Contact</h6>
-                            <hr class="mb-4 mt-0 d-inline-block mx-auto"
-                                style="width: 60px; background-color: #7c4dff; height: 2px" />
-                            <p><i class="fas fa-home mr-3"></i> 89-91 Bakers Rd, Coburgh North VIC 3058</p>
-                            <p><i class="fas fa-envelope mr-3"></i> info@royal1.com.au</p>
-                            <p><i class="fas fa-phone mr-3"></i>+61 401 666 080</p>
-                        </div>
-                        <!-- Grid column -->
-                    </div>
-                    <!-- Grid row -->
-                </div>
-            </section>
-            <!-- Section: Links  -->
-
-            <!-- Copyright -->
-            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
-                © 2023 Copyright:
-                <a class="text-dark" href="#">Managed by Adnkmedia</a>
-            </div>
-            <!-- Copyright -->
-        </footer>
-        <!-- Footer -->
-    </div>
-    <!-- End of .container -->
-
-
-
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
-        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
-        crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    </footer>
     <script>
-        const forms = document.querySelectorAll('form[name="submit-to-google-sheet"]');
+        document.addEventListener('DOMContentLoaded', function() {
+            let currentIndex = 0;
+            const carouselContainer = document.querySelector('.carousel-container');
+            const reviews = document.querySelectorAll('.review');
+            const prevBtn = document.querySelector('.prev');
+            const nextBtn = document.querySelector('.next');
+            const dots = document.querySelectorAll('.dot');
+            const carousel = document.querySelector('.carousel');
+            let autoSlideInterval;
 
-        forms.forEach((form) => {
-            form.addEventListener("submit", async (e) => {
-                e.preventDefault();
+            function showReview(index) {
+                const offset = -index * 100;
+                carouselContainer.style.transform = `translateX(${offset}%)`;
+                // Update dots
+                dots.forEach((dot, i) => {
+                    dot.classList.toggle('active', i === index);
+                });
+            }
 
-                // honeypot
-                const hp = form.querySelector('input[name="website"]');
-                if (hp && hp.value) return;
+            function nextReview() {
+                currentIndex = (currentIndex + 1) % reviews.length;
+                showReview(currentIndex);
+            }
 
-                const submitBtn = form.querySelector('button[type="submit"]');
-                const originalBtnText = submitBtn?.textContent;
-                if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = "Submitting..."; }
+            function prevReview() {
+                currentIndex = (currentIndex - 1 + reviews.length) % reviews.length;
+                showReview(currentIndex);
+            }
 
-                try {
-                    const scriptURL = form.dataset.script;
-                    const formData = new FormData(form);
+            function goToReview(index) {
+                currentIndex = index;
+                showReview(currentIndex);
+            }
 
-                    formData.append("page_path", location.pathname);
-                    formData.append("submitted_at", new Date().toISOString());
+            prevBtn.addEventListener('click', prevReview);
+            nextBtn.addEventListener('click', nextReview);
 
-                    await fetch(scriptURL, { method: "POST", mode: "no-cors", body: formData });
+            // Dot navigation
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => goToReview(index));
+            });
 
-                    form.reset();
-                    swal("Done", "Your submission was successful!", "success");
-                } catch (err) {
-                    swal("Error", "Something went wrong. Please try again.", "error");
-                } finally {
-                    if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = originalBtnText || "Submit"; }
+            // Keyboard navigation
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'ArrowLeft') {
+                    prevReview();
+                } else if (e.key === 'ArrowRight') {
+                    nextReview();
                 }
             });
+
+            // Pause on hover
+            carousel.addEventListener('mouseenter', () => {
+                clearInterval(autoSlideInterval);
+            });
+
+            carousel.addEventListener('mouseleave', () => {
+                autoSlideInterval = setInterval(nextReview, 5000);
+            });
+
+            // Touch/swipe support
+            let startX = 0;
+            let endX = 0;
+
+            carousel.addEventListener('touchstart', (e) => {
+                startX = e.touches[0].clientX;
+                clearInterval(autoSlideInterval);
+            });
+
+            carousel.addEventListener('touchend', (e) => {
+                endX = e.changedTouches[0].clientX;
+                const diff = startX - endX;
+
+                if (Math.abs(diff) > 50) { // Minimum swipe distance
+                    if (diff > 0) {
+                        nextReview();
+                    } else {
+                        prevReview();
+                    }
+                }
+
+                autoSlideInterval = setInterval(nextReview, 5000);
+            });
+
+            // Start auto-slide
+            autoSlideInterval = setInterval(nextReview, 5000);
         });
     </script>
-    <iframe name="gsheet_iframe" style="display:none;width:0;height:0;border:0;"></iframe>
-
 </body>
 
 </html>

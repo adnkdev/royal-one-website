@@ -83,8 +83,8 @@
 
         .topbar .wrap {
             display: flex;
-            justify-content: space-between;
-            gap: 16px;
+            justify-content: flex-end;
+            gap: 24px;
             padding: 10px 0;
             flex-wrap: wrap
         }
@@ -125,6 +125,16 @@
         .nav-links a.active,
         .nav-links a:hover {
             color: var(--primary)
+        }
+
+        /* mobile toggle button */
+        .nav-toggle {
+            display: none;
+            font-size: 28px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--primary);
         }
 
         .hero {
@@ -258,8 +268,27 @@
         }
 
         @media (max-width:760px) {
+            .nav-toggle {
+                display: block;
+            }
             .nav-links {
                 display: none
+            }
+
+            .nav-links.open {
+                display: flex;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                gap: 16px;
+                background: #fff;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                padding: 20px 0;
+                box-shadow: 0 4px 10px rgba(0,0,0,.1);
             }
         }
     </style>
@@ -268,12 +297,14 @@
 <body>
     <div class="topbar">
         <div class="container wrap">
-            <div>📞 (03) 9000 0000</div>
-            <div>✉️ info@royalone.com.au</div>
+            <div>� 1300 865 060</div>
+            <div>📧 info@royal1.com.au</div>
+            <div>📍 89-91 Bakers Rd, Coburg North VIC 3058</div>
         </div>
     </div>
     <header>
         <div class="container navbar"><a href="index.html" class="logo">Royal <span>One</span></a>
+            <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
             <nav class="nav-links"><a href="index.html">Home</a><a href="air-conditioning.html">Air Conditioning</a><a
                     class="active" href="heat-pump.html">Heat Pump</a><a href="solar.html">Solar</a><a
                     href="contact.html">Contact</a></nav><a href="contact.html" class="btn btn-primary">Get a Quote</a>
@@ -363,9 +394,9 @@
                 <div class="footer-col">
                     <h4>Contact</h4>
                     <ul>
-                        <li>(03) 9000 0000</li>
-                        <li>info@royalone.com.au</li>
-                        <li>Melbourne, Victoria</li>
+                        <li>1300 865 060</li>
+                        <li>info@royal1.com.au</li>
+                        <li>89-91 Bakers Rd, Coburg North VIC 3058</li>
                     </ul>
                 </div>
             </div>
@@ -373,6 +404,15 @@
             </div>
         </div>
     </footer>
+<script>
+  document.addEventListener('DOMContentLoaded', function(){
+    const toggle = document.querySelector('.nav-toggle');
+    const nav = document.querySelector('.nav-links');
+    if (toggle && nav) {
+      toggle.addEventListener('click', () => nav.classList.toggle('open'));
+    }
+  });
+</script>
 </body>
 
 </html>

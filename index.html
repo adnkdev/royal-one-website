@@ -83,8 +83,8 @@
 
         .topbar .wrap {
             display: flex;
-            justify-content: space-between;
-            gap: 16px;
+            justify-content: flex-end;
+            gap: 24px;
             padding: 10px 0;
             flex-wrap: wrap
         }
@@ -137,6 +137,17 @@
         .nav-links a.active {
             color: var(--primary)
         }
+
+        /* mobile toggle button */
+        .nav-toggle {
+            display: none;
+            font-size: 28px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--primary);
+        }
+
 
         .btn {
             display: inline-flex;
@@ -605,8 +616,27 @@
         }
 
         @media (max-width:760px) {
+            .nav-toggle {
+                display: block;
+            }
             .nav-links {
                 display: none
+            }
+
+            .nav-links.open {
+                display: flex;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                gap: 16px;
+                background: #fff;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                padding: 20px 0;
+                box-shadow: 0 4px 10px rgba(0,0,0,.1);
             }
 
             .card-grid,
@@ -616,10 +646,28 @@
                 grid-template-columns: 1fr
             }
 
+            .carousel {
+                max-width: 100%;
+                margin: 24px auto 0;
+            }
+
+            .carousel-container {
+                justify-content: flex-start;
+            }
+
+            .review {
+                flex: 0 0 100%;
+                box-sizing: border-box;
+                padding: 18px 5%; /* keep cards full width but inset content for breathing room */
+            }
+
             .prev,
             .next {
                 left: 10px;
-                right: auto
+                right: auto;
+                width: 32px;
+                height: 32px;
+                font-size: 16px;
             }
 
             .next {
@@ -636,6 +684,15 @@
             .section {
                 padding: 48px 0
             }
+
+            footer {
+                text-align: center
+            }
+
+            .footer-col h4,
+            .footer-col ul {
+                text-align: center
+            }
         }
     </style>
 </head>
@@ -643,14 +700,15 @@
 <body>
     <div class="topbar">
         <div class="container wrap">
-            <div class="left"><span>📞 (03) 9000 0000</span><span>✉️ info@royalone.com.au</span></div>
-            <div class="right"><span>📍 Melbourne, Victoria</span><span>Heating, hot water, solar and battery
-                    upgrades</span></div>
+            <div>� 1300 865 060</div>
+            <div>📧 info@royal1.com.au</div>
+            <div>📍 89-91 Bakers Rd, Coburg North VIC 3058</div>
         </div>
     </div>
     <header>
         <div class="container navbar">
             <a href="index.html" class="logo">Royal <span>One</span></a>
+            <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
             <nav class="nav-links">
                 <a class="active" href="index.html">Home</a>
                 <a href="air-conditioning.html">Air Conditioning</a>
@@ -792,6 +850,23 @@
                         <p>They explained the upgrade clearly and helped us choose the right option for our home.</p>
                         <strong>Sample Customer</strong>
                     </div>
+                    <!-- additional reviews -->
+                    <div class="review">
+                        <div class="stars">★★★★★</div>
+                        <p>Fantastic communication and very tidy installation. Would highly recommend Royal One.</p>
+                        <strong>Sample Customer</strong>
+                    </div>
+                    <div class="review">
+                        <div class="stars">★★★★★</div>
+                        <p>Quick response time and excellent advice. Our energy bills have dropped significantly.</p>
+                        <strong>Sample Customer</strong>
+                    </div>
+                    <div class="review">
+                        <div class="stars">★★★★★</div>
+                        <p>Professional team, clean work and very knowledgeable about regulations and rebates.</p>
+                        <strong>Sample Customer</strong>
+                    </div>
+
                 </div>
                 <button class="prev">&lt;</button>
                 <button class="next">&gt;</button>
@@ -799,6 +874,10 @@
                     <span class="dot active" data-index="0"></span>
                     <span class="dot" data-index="1"></span>
                     <span class="dot" data-index="2"></span>
+                    <span class="dot" data-index="3"></span>
+                    <span class="dot" data-index="4"></span>
+                    <span class="dot" data-index="5"></span>
+
                 </div>
             </div>
         </div>
@@ -863,9 +942,9 @@
                 <div class="footer-col">
                     <h4>Contact</h4>
                     <ul>
-                        <li>(03) 9000 0000</li>
-                        <li>info@royalone.com.au</li>
-                        <li>Melbourne, Victoria</li>
+                        <li>1300 865 060</li>
+                        <li>info@royal1.com.au</li>
+                        <li>89-91 Bakers Rd, Coburg North VIC 3058</li>
                     </ul>
                 </div>
             </div>
@@ -960,6 +1039,13 @@
 
             // Start auto-slide
             autoSlideInterval = setInterval(nextReview, 5000);
+
+            // mobile nav toggle
+            const toggle = document.querySelector('.nav-toggle');
+            const nav = document.querySelector('.nav-links');
+            if (toggle && nav) {
+                toggle.addEventListener('click', () => nav.classList.toggle('open'));
+            }
         });
     </script>
 </body>

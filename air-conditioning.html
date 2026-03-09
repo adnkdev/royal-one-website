@@ -120,6 +120,8 @@
             letter-spacing: .5px
         }
 
+        .logo img { display: block; height: 64px; width: auto; }
+
         .logo span {
             color: var(--accent)
         }
@@ -177,7 +179,7 @@
         }
 
         .hero {
-            background: linear-gradient(120deg, rgba(8, 42, 73, .92), rgba(12, 59, 102, .8)), url('https://images.unsplash.com/photo-1581092921461-eab10380d70a?auto=format&fit=crop&w=1600&q=80') center/cover;
+            background: linear-gradient(120deg, rgba(8, 42, 73, .92), rgba(12, 59, 102, .8)), url('assets/air-conditioner-pic-1.jpg') center/cover;
             color: #fff
         }
 
@@ -322,7 +324,7 @@
 
         .systems-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(2, 1fr);
             gap: 24px;
             margin-top: 42px
         }
@@ -344,13 +346,20 @@
 
         .system-image {
             width: 100%;
-            height: 220px;
+            height: 320px;
             background: linear-gradient(135deg, #f1f5f9, #e2e8f0);
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 48px;
             color: #cbd5e1
+        }
+
+        .system-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block
         }
 
         .system-body {
@@ -573,7 +582,7 @@
     </div>
     <header>
         <div class="container navbar">
-            <a href="index.html" class="logo">Royal <span>One</span></a>
+            <a href="index.html" class="logo"><img src="assets/ROYAL ONE logo.png" alt="Royal One logo" /></a>
             <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
             <nav class="nav-links">
                 <a href="index.html">Home</a>
@@ -598,13 +607,30 @@
         </div>
     </section>
 
-    <!-- Intro / VEU Program Section -->
-    <section class="section" style="background: var(--bg)">
+       <!-- System Types Section -->
+    <section class="section systems-section">
         <div class="container center">
-            <h2 class="section-title">Government Heating & Cooling Rebates</h2>
-            <div style="max-width: 800px; margin: 0 auto">
-                <p class="section-subtitle">Royal One Pty Ltd helps Victorian households and businesses access rebates through the Victorian Energy Upgrades (VEU) program. Eligible properties may receive discounted upgrades when replacing inefficient heating systems with energy-efficient reverse cycle air conditioning.</p>
-                <p class="section-subtitle">Royal One works with accredited providers and compliant installation processes to help make the rebate process simple, smooth, and stress-free.</p>
+            <h2 class="section-title">Energy-Efficient Heating & Cooling</h2>
+            <div class="systems-intro">
+                <p class="section-subtitle">Choose from a range of reverse cycle systems designed to suit different homes, room sizes and layouts.</p>
+            </div>
+            <div class="systems-grid">
+                <div class="system-card">
+                    <div class="system-image"><img src="assets/multisplit.png" alt="Multi Split System" /></div>
+                    <div class="system-body">
+                        <h3>Multi Split Systems</h3>
+                        <p>Connect multiple indoor units to one outdoor unit for flexible home comfort and control.</p>
+                        <a href="contact.html" class="btn btn-primary">Learn More</a>
+                    </div>
+                </div>
+                <div class="system-card">
+                    <div class="system-image"><img src="assets/ducted-system.png" alt="Ducted System" /></div>
+                    <div class="system-body">
+                        <h3>Ducted Systems</h3>
+                        <p>Whole-home heating and cooling for complete climate control throughout your property.</p>
+                        <a href="contact.html" class="btn btn-primary">Learn More</a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -666,41 +692,6 @@
         </div>
     </section>
 
-    <!-- System Types Section -->
-    <section class="section systems-section">
-        <div class="container center">
-            <h2 class="section-title">Energy-Efficient Heating & Cooling</h2>
-            <div class="systems-intro">
-                <p class="section-subtitle">Choose from a range of reverse cycle systems designed to suit different homes, room sizes and layouts.</p>
-            </div>
-            <div class="systems-grid">
-                <div class="system-card">
-                    <div class="system-image">❄️</div>
-                    <div class="system-body">
-                        <h3>Single Split Systems</h3>
-                        <p>Ideal for individual rooms and small spaces. Compact and efficient heating and cooling.</p>
-                        <a href="contact.html" class="btn btn-primary">Learn More</a>
-                    </div>
-                </div>
-                <div class="system-card">
-                    <div class="system-image">🌡️</div>
-                    <div class="system-body">
-                        <h3>Multi Split Systems</h3>
-                        <p>Connect multiple indoor units to one outdoor unit for flexible home comfort and control.</p>
-                        <a href="contact.html" class="btn btn-primary">Learn More</a>
-                    </div>
-                </div>
-                <div class="system-card">
-                    <div class="system-image">🏠</div>
-                    <div class="system-body">
-                        <h3>Ducted Systems</h3>
-                        <p>Whole-home heating and cooling for complete climate control throughout your property.</p>
-                        <a href="contact.html" class="btn btn-primary">Learn More</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- Gallery Section -->
     <section class="section gallery-section">
@@ -749,7 +740,7 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <div class="logo" style="color: #fff; margin-bottom: 14px">Royal <span style="color: var(--gold)">One</span></div>
+                    <div class="logo" style="color: #fff; margin-bottom: 14px"><img src="assets/ROYAL ONE logo.png" alt="Royal One logo" /></div>
                     <p style="margin: 0; font-size: 14px; color: rgba(255, 255, 255, .8);">Premium energy upgrade solutions across Victoria.</p>
                 </div>
                 <div class="footer-col">
@@ -765,8 +756,8 @@
                     <h4>Support</h4>
                     <ul>
                         <li><a href="contact.html">Contact</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="terms-and-conditions.html">Terms & Conditions</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">

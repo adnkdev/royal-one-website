@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Royal One | Privacy Policy</title>
+    <style>
+        :root {
+            --primary: #0c3b66;
+            --primary-dark: #082a49;
+            --accent: #2fa36b;
+            --accent-dark: #248454;
+            --gold: #d9b25f;
+            --bg: #f6f8fb;
+            --text: #1f2937;
+            --muted: #6b7280;
+            --white: #fff;
+            --border: #e5e7eb;
+            --shadow: 0 10px 30px rgba(12, 59, 102, .08);
+            --container: 1180px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            color: var(--text);
+            line-height: 1.6;
+            background: #fff;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: min(92%, var(--container));
+            margin: 0 auto;
+        }
+
+        .section {
+            padding: 48px 0;
+        }
+
+        .section-title {
+            font-size: clamp(30px, 4vw, 44px);
+            margin: 0 0 14px;
+            color: var(--primary-dark);
+            line-height: 1.15;
+        }
+
+        .section-subtitle {
+            max-width: 960px;
+            color: var(--muted);
+            font-size: 17px;
+            margin: 0;
+        }
+
+        .topbar {
+            background: var(--primary-dark);
+            color: rgba(255, 255, 255, .92);
+            font-size: 14px;
+        }
+
+        .topbar .wrap {
+            display: flex;
+            justify-content: flex-end;
+            gap: 24px;
+            padding: 10px 0;
+            flex-wrap: wrap;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, .96);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid rgba(229, 231, 235, .8);
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 18px 0;
+            gap: 20px;
+        }
+
+        .logo {
+            font-size: 30px;
+            font-weight: 800;
+            color: var(--primary);
+            letter-spacing: .5px;
+        }
+
+        .logo img { display: block; height: 64px; width: auto; }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 26px;
+            align-items: center;
+            font-weight: 600;
+            color: #374151;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--primary);
+        }
+
+        .nav-toggle {
+            display: none;
+            font-size: 28px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--primary);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 24px;
+            border-radius: 999px;
+            font-weight: 700;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: #fff;
+            box-shadow: var(--shadow);
+        }
+
+        .hero {
+            background: linear-gradient(120deg, rgba(8, 42, 73, .92), rgba(12, 59, 102, .8));
+            color: #fff;
+        }
+
+        .hero-inner {
+            padding: 86px 0 78px;
+            max-width: 960px;
+        }
+
+        .hero h1 {
+            font-size: clamp(42px, 6vw, 66px);
+            margin: 0 0 14px;
+            line-height: 1.05;
+        }
+
+        .hero p {
+            margin: 0;
+            color: rgba(255, 255, 255, .9);
+            font-size: 18px;
+        }
+
+        .policy-wrapper {
+            display: grid;
+            gap: 16px;
+            margin-top: 26px;
+        }
+
+        .policy-block {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            padding: 22px;
+        }
+
+        .policy-block h3 {
+            margin: 0 0 8px;
+            color: var(--primary-dark);
+            font-size: 22px;
+        }
+
+        .policy-block p {
+            margin: 0 0 12px;
+            color: var(--text);
+        }
+
+        .policy-block p:last-child {
+            margin-bottom: 0;
+        }
+
+        .policy-block ul {
+            margin: 10px 0 12px 20px;
+            padding: 0;
+        }
+
+        .policy-block ul li {
+            margin-bottom: 6px;
+        }
+
+        footer {
+            background: #071f34;
+            color: rgba(255, 255, 255, .9);
+            padding: 70px 0 22px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
+            gap: 28px;
+            padding-bottom: 28px;
+            border-bottom: 1px solid rgba(255, 255, 255, .1);
+        }
+
+        .footer-col h4 {
+            margin: 0 0 16px;
+            color: #fff;
+            font-size: 18px;
+        }
+
+        .footer-col ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: grid;
+            gap: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--accent);
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            gap: 16px;
+            flex-wrap: wrap;
+            padding-top: 20px;
+            font-size: 14px;
+            color: rgba(255, 255, 255, .58);
+        }
+
+        @media (max-width: 960px) {
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 760px) {
+            .topbar .wrap {
+                justify-content: center;
+                gap: 12px;
+                font-size: 13px;
+            }
+
+            .nav-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .nav-links.open {
+                display: flex;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                gap: 16px;
+                background: #fff;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                padding: 20px 0;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, .1);
+            }
+
+            footer {
+                text-align: center;
+            }
+
+            .footer-col h4,
+            .footer-col ul {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="topbar">
+        <div class="container wrap">
+            <div>☎️ 1300 865 060</div>
+            <div>📧 info@royal1.com.au</div>
+            <div>📍 89-91 Bakers Rd, Coburg North VIC 3058</div>
+        </div>
+    </div>
+
+    <header>
+        <div class="container navbar">
+            <a href="index.html" class="logo"><img src="assets/ROYAL ONE logo.png" alt="Royal One logo" /></a>
+            <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="air-conditioning.html">Air Conditioning</a>
+                <a href="heat-pump.html">Heat Pump</a>
+                <a href="solar.html">Solar</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+            <a href="contact.html" class="btn btn-primary">Get a Quote</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container hero-inner">
+            <h1>Privacy Policy</h1>
+            <p>Royal One Pty Ltd</p>
+            <p>Last Updated: 9 March 2026</p>
+        </div>
+    </section>
+
+    <section class="section" style="background: var(--bg);">
+        <div class="container">
+            <h2 class="section-title">Your Privacy</h2>
+            <p class="section-subtitle">Royal One Pty Ltd respects your privacy and is committed to protecting the personal information of our customers, website visitors, and business partners.</p>
+            <p class="section-subtitle" style="margin-top: 10px;">This Privacy Policy outlines how we collect, use, store, and disclose your personal information in accordance with the Privacy Act 1988 (Cth) and the Australian Privacy Principles.</p>
+
+            <div class="policy-wrapper">
+                <article class="policy-block">
+                    <h3>1. What is Personal Information</h3>
+                    <p>"Personal information" refers to any information or opinion that identifies an individual or could reasonably identify an individual.</p>
+                    <p>Examples include:</p>
+                    <ul>
+                        <li>Name</li>
+                        <li>Email address</li>
+                        <li>Phone number</li>
+                        <li>Residential or installation address</li>
+                        <li>Payment details</li>
+                        <li>Energy usage information</li>
+                        <li>Identification documents (where required for rebate programs)</li>
+                    </ul>
+                </article>
+
+                <article class="policy-block">
+                    <h3>2. Collection of Personal Information</h3>
+                    <p>Royal One Pty Ltd may collect personal information when you:</p>
+                    <ul>
+                        <li>Submit an enquiry on our website</li>
+                        <li>Request a quote or consultation</li>
+                        <li>Purchase a product or service</li>
+                        <li>Apply for government rebates or incentive programs</li>
+                        <li>Contact us via phone, email, or online forms</li>
+                        <li>Subscribe to updates or marketing communications</li>
+                    </ul>
+                    <p>Information collected may include:</p>
+                    <ul>
+                        <li>Name</li>
+                        <li>Phone number</li>
+                        <li>Email address</li>
+                        <li>Property address</li>
+                        <li>Property details (e.g., dwelling type, existing equipment)</li>
+                        <li>Energy usage information</li>
+                        <li>Payment or billing information</li>
+                    </ul>
+                    <p>We may also collect any other information you voluntarily provide when communicating with us.</p>
+                </article>
+
+                <article class="policy-block">
+                    <h3>3. How We Collect Personal Information</h3>
+                    <p>Personal information may be collected in several ways including:</p>
+                    <ul>
+                        <li>Through our website forms</li>
+                        <li>By phone or email communication</li>
+                        <li>During consultations or site inspections</li>
+                        <li>When providing installation or technical services</li>
+                        <li>Through third-party platforms or referral partners</li>
+                    </ul>
+                    <p>If we receive information from third parties, we will handle it in accordance with this Privacy Policy.</p>
+                </article>
+
+                <article class="policy-block">
+                    <h3>4. Use of Personal Information</h3>
+                    <p>Royal One Pty Ltd may use your personal information to:</p>
+                    <ul>
+                        <li>Provide products and installation services</li>
+                        <li>Process enquiries, quotes, and orders</li>
+                        <li>Assist with government rebate programs including Victorian Energy Upgrades (VEU) and Solar Victoria</li>
+                        <li>Communicate with you about installations or services</li>
+                        <li>Provide customer support</li>
+                        <li>Improve our products and services</li>
+                        <li>Send promotional offers or updates (where consent is provided)</li>
+                    </ul>
+                    <p>You may opt out of marketing communications at any time.</p>
+                </article>
+
+                <article class="policy-block">
+                    <h3>5. Disclosure of Personal Information</h3>
+                    <p>Royal One Pty Ltd may disclose your personal information to:</p>
+                    <ul>
+                        <li>Employees and authorised representatives</li>
+                        <li>Licensed installers and subcontractors</li>
+                        <li>Suppliers and equipment manufacturers</li>
+                        <li>Government agencies or program administrators (e.g. VEU or Solar Victoria)</li>
+                        <li>Payment processing providers</li>
+                        <li>Professional advisers such as accountants or lawyers</li>
+                        <li>IT service providers</li>
+                    </ul>
+                    <p>Personal information is only shared when necessary to deliver services or comply with legal obligations.</p>
+                </article>
+
+                <article class="policy-block">
+                    <h3>6. Overseas Disclosure</h3>
+                    <p>Some of our technology providers or service partners may store or process data outside Australia.</p>
+                    <p>Where this occurs, Royal One Pty Ltd will take reasonable steps to ensure that your personal information is handled securely and in accordance with Australian privacy laws.</p>
+                </article>
+
+                <article class="policy-block">
+                    <h3>7. Security of Personal Information</h3>
+                    <p>Royal One Pty Ltd takes reasonable steps to protect personal information from:</p>
+                    <ul>
+                        <li>Unauthorised access</li>
+                        <li>Misuse or interference</li>
+                        <li>Loss or theft</li>
+                        <li>Unauthorised modification or disclosure</li>
+                    </ul>
+                    <p>Security measures include administrative, technical, and physical safeguards.</p>
+                    <p>However, transmission of information via the internet carries inherent risks, and we cannot guarantee absolute security.</p>
+                </article>
+
+                <article class="policy-block">
+                    <h3>8. Access and Correction of Personal Information</h3>
+                    <p>You may request access to personal information we hold about you.</p>
+                    <p>You may also request corrections if you believe the information is:</p>
+                    <ul>
+                        <li>Incorrect</li>
+                        <li>Outdated</li>
+                        <li>Incomplete</li>
+                        <li>Misleading</li>
+                    </ul>
+                    <p>Requests can be made by contacting us using the details below.</p>
+                </article>
+
+                <article class="policy-block">
+                    <h3>9. Cookies and Website Analytics</h3>
+                    <p>When you visit royal1.com.au, we may collect information such as:</p>
+                    <ul>
+                        <li>Browser type</li>
+                        <li>Device information</li>
+                        <li>IP address</li>
+                        <li>Pages visited</li>
+                        <li>Website usage behaviour</li>
+                    </ul>
+                    <p>This information helps us improve our website and user experience.</p>
+                    <p>Our website may also use cookies to:</p>
+                    <ul>
+                        <li>Analyse website traffic</li>
+                        <li>Remember visitor preferences</li>
+                        <li>Deliver relevant advertising through platforms such as Google Ads</li>
+                    </ul>
+                    <p>You can disable cookies in your browser settings, though some features of the website may not function properly.</p>
+                </article>
+
+                <article class="policy-block">
+                    <h3>10. Third-Party Websites</h3>
+                    <p>Our website may contain links to third-party websites.</p>
+                    <p>Royal One Pty Ltd is not responsible for the privacy practices of external websites.</p>
+                    <p>We encourage users to review the privacy policies of those websites.</p>
+                </article>
+
+                <article class="policy-block">
+                    <h3>11. Complaints</h3>
+                    <p>If you have concerns about how your personal information is handled, please contact us.</p>
+                    <p>We will investigate complaints and respond within a reasonable timeframe.</p>
+                    <p>If you are not satisfied with our response, you may contact the Office of the Australian Information Commissioner (OAIC).</p>
+                </article>
+
+                <article class="policy-block">
+                    <h3>12. Changes to this Privacy Policy</h3>
+                    <p>Royal One Pty Ltd may update this Privacy Policy from time to time.</p>
+                    <p>Any updates will be published on this page.</p>
+                </article>
+
+                <article class="policy-block">
+                    <h3>13. Contact Us</h3>
+                    <p>For privacy enquiries, requests, or complaints please contact:</p>
+                    <p>Royal One Pty Ltd</p>
+                    <p>Website: <a href="https://royal1.com.au" target="_blank" rel="noopener noreferrer" style="color: var(--primary); text-decoration: underline;">https://royal1.com.au</a></p>
+                    <p>Email: <a href="mailto:info@royal1.com.au" style="color: var(--primary); text-decoration: underline;">info@royal1.com.au</a></p>
+                    <p>Phone: <a href="tel:1300865060" style="color: var(--primary); text-decoration: underline;">1300 865 060</a></p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="logo" style="color:#fff;margin-bottom:14px"><img src="assets/ROYAL ONE logo.png" alt="Royal One logo" /></div>
+                    <p>Premium energy upgrade solutions across Victoria.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Pages</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="air-conditioning.html">Air Conditioning</a></li>
+                        <li><a href="heat-pump.html">Heat Pump</a></li>
+                        <li><a href="solar.html">Solar</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="terms-and-conditions.html">Terms &amp; Conditions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li>1300 865 060</li>
+                        <li>info@royal1.com.au</li>
+                        <li>89-91 Bakers Rd, Coburg North VIC 3058</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom"><span>© 2026 Royal One. All rights reserved.</span><span>Privacy Policy</span></div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const toggle = document.querySelector('.nav-toggle');
+            const nav = document.querySelector('.nav-links');
+            if (toggle && nav) {
+                toggle.addEventListener('click', () => nav.classList.toggle('open'));
+            }
+        });
+    </script>
+</body>
+
+</html>

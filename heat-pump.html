@@ -113,6 +113,8 @@
             letter-spacing: .5px
         }
 
+        .logo img { display: block; height: 64px; width: auto; }
+
         .logo span {
             color: var(--accent)
         }
@@ -174,7 +176,7 @@
         }
 
         .hero {
-            background: linear-gradient(120deg, rgba(8, 42, 73, .92), rgba(12, 59, 102, .8)), url('https://images.unsplash.com/photo-1585704032915-c3400ca199e7?auto=format&fit=crop&w=1600&q=80') center/cover;
+            background: linear-gradient(120deg, rgba(8, 42, 73, .92), rgba(12, 59, 102, .8)), url('assets/Hot-Water-Heat-Pumps.jpg') center/cover;
             color: #fff
         }
 
@@ -258,6 +260,14 @@
 
         .product-card:hover {
             transform: translateY(-6px)
+        }
+
+        .product-image {
+            width: 100%;
+            height: 220px;
+            object-fit: contain;
+            display: block;
+            margin: 0 auto 20px
         }
 
         .product-card h3 {
@@ -586,7 +596,7 @@
     </div>
     <header>
         <div class="container navbar">
-            <a href="index.html" class="logo">Royal <span>One</span></a>
+            <a href="index.html" class="logo"><img src="assets/ROYAL ONE logo.png" alt="Royal One logo" /></a>
             <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
             <nav class="nav-links">
                 <a href="index.html">Home</a>
@@ -611,29 +621,20 @@
         </div>
     </section>
 
-    <!-- Intro Section -->
-    <section class="section" style="background: var(--bg)">
-        <div class="container center">
-            <h2 class="section-title">Hot Water System Discounts</h2>
-            <div style="max-width: 800px; margin: 0 auto">
-                <p class="section-subtitle">Hot water can make up a significant share of a household's energy bill. By upgrading to an energy-efficient heat pump hot water system, households can reduce electricity costs, lower carbon emissions, and improve overall energy efficiency.</p>
-                <p class="section-subtitle" style="margin-top: 20px;">Royal One Pty Ltd helps Victorian households access available discounts and rebates while managing the installation process with compliant documentation and professional support.</p>
-            </div>
-        </div>
-    </section>
-
     <!-- Product Section -->
     <section class="section">
         <div class="container center">
             <h2 class="section-title">Hot Water Systems</h2>
             <div class="product-grid">
                 <div class="product-card">
+                    <img class="product-image" src="assets/emerald-heatpump.png" alt="Emerald heat pump hot water system" />
                     <h3>Emerald</h3>
                     <p>High-efficiency heat pump hot water system designed for reliable performance and energy savings.</p>
                     <a href="#">Heat Pump App / User Guide ></a>
                 </div>
                 <div class="product-card">
-                    <h3>Powerbay</h3>
+                    <img class="product-image" src="assets/ecogenica-heatpump.png" alt="Ecogenica heat pump hot water system" />
+                    <h3>Ecogenica</h3>
                     <p>Efficient hot water solution designed to support lower running costs and improved household energy performance.</p>
                     <a href="#">Heat Pump App / User Guide ></a>
                 </div>
@@ -779,7 +780,7 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <div class="logo" style="color: #fff; margin-bottom: 14px">Royal <span style="color: var(--gold)">One</span></div>
+                    <div class="logo" style="color: #fff; margin-bottom: 14px"><img src="assets/ROYAL ONE logo.png" alt="Royal One logo" /></div>
                     <p style="margin: 0; font-size: 14px; color: rgba(255, 255, 255, .8);">Premium energy upgrade solutions across Victoria.</p>
                 </div>
                 <div class="footer-col">
@@ -795,8 +796,8 @@
                     <h4>Support</h4>
                     <ul>
                         <li><a href="contact.html">Contact</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="terms-and-conditions.html">Terms & Conditions</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">

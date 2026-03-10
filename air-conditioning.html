@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -120,7 +121,11 @@
             letter-spacing: .5px
         }
 
-        .logo img { display: block; height: 64px; width: auto; }
+        .logo img {
+            display: block;
+            height: 64px;
+            width: auto;
+        }
 
         .logo span {
             color: var(--accent)
@@ -509,6 +514,7 @@
         }
 
         @media (max-width:1080px) {
+
             .card-grid,
             .feature-grid,
             .systems-grid,
@@ -525,9 +531,11 @@
                 gap: 12px;
                 font-size: 13px
             }
+
             .nav-toggle {
                 display: block;
             }
+
             .nav-links {
                 display: none
             }
@@ -545,7 +553,7 @@
                 left: 0;
                 width: 100%;
                 padding: 20px 0;
-                box-shadow: 0 4px 10px rgba(0,0,0,.1);
+                box-shadow: 0 4px 10px rgba(0, 0, 0, .1);
             }
 
             .card-grid,
@@ -565,6 +573,11 @@
                 text-align: center
             }
 
+            .footer-grid>div:first-child .logo {
+                display: flex;
+                justify-content: center
+            }
+
             .footer-col h4,
             .footer-col ul {
                 text-align: center
@@ -572,6 +585,7 @@
         }
     </style>
 </head>
+
 <body>
     <div class="topbar">
         <div class="container wrap">
@@ -599,7 +613,9 @@
     <section class="hero">
         <div class="container hero-content">
             <h1>Air Conditioning Government Rebates</h1>
-            <p>Upgrade to energy-efficient heating and cooling with Royal One Pty Ltd. We help Victorian households access government rebates for high-efficiency reverse cycle air conditioning systems under the Victorian Energy Upgrades (VEU) program.</p>
+            <p>Upgrade to energy-efficient heating and cooling with Royal One Pty Ltd. We help Victorian households
+                access government rebates for high-efficiency reverse cycle air conditioning systems under the Victorian
+                Energy Upgrades (VEU) program.</p>
             <div class="hero-buttons">
                 <a href="#eligibility" class="btn btn-primary">Check Eligibility</a>
                 <a href="contact.html" class="btn btn-secondary">Request a Free Quote</a>
@@ -607,12 +623,13 @@
         </div>
     </section>
 
-       <!-- System Types Section -->
+    <!-- System Types Section -->
     <section class="section systems-section">
         <div class="container center">
             <h2 class="section-title">Energy-Efficient Heating & Cooling</h2>
             <div class="systems-intro">
-                <p class="section-subtitle">Choose from a range of reverse cycle systems designed to suit different homes, room sizes and layouts.</p>
+                <p class="section-subtitle">Choose from a range of reverse cycle systems designed to suit different
+                    homes, room sizes and layouts.</p>
             </div>
             <div class="systems-grid">
                 <div class="system-card">
@@ -656,7 +673,8 @@
                     <p>The home must have an existing ducted gas heating system.</p>
                 </div>
             </div>
-            <div class="eligibility-note">T&C Apply. Eligibility depends on property conditions and program requirements.</div>
+            <div class="eligibility-note">T&C Apply. Eligibility depends on property conditions and program
+                requirements.</div>
             <div class="center-button">
                 <a href="contact.html" class="btn btn-primary">Check My Eligibility</a>
             </div>
@@ -676,12 +694,14 @@
                 <div class="feature">
                     <div class="feature-icon">✅</div>
                     <h3>Fully Compliant</h3>
-                    <p>Our process follows Victorian Energy Upgrades program requirements and documentation standards.</p>
+                    <p>Our process follows Victorian Energy Upgrades program requirements and documentation standards.
+                    </p>
                 </div>
                 <div class="feature">
                     <div class="feature-icon">🌬️</div>
                     <h3>Efficient Systems</h3>
-                    <p>We supply high-performance reverse cycle air conditioning systems built for year-round comfort.</p>
+                    <p>We supply high-performance reverse cycle air conditioning systems built for year-round comfort.
+                    </p>
                 </div>
                 <div class="feature">
                     <div class="feature-icon">🔧</div>
@@ -698,7 +718,8 @@
         <div class="container center">
             <h2 class="section-title">Recent Installations</h2>
             <div class="gallery-intro">
-                <p class="section-subtitle">Royal One proudly delivers air conditioning upgrades across Victoria, helping households improve comfort and reduce energy costs.</p>
+                <p class="section-subtitle">Royal One proudly delivers air conditioning upgrades across Victoria,
+                    helping households improve comfort and reduce energy costs.</p>
             </div>
             <div class="gallery-grid">
                 <div class="gallery-item">Installation Photo</div>
@@ -731,7 +752,8 @@
                     <span class="stat-label">Ongoing Customer Support</span>
                 </div>
             </div>
-            <div class="trust-text">Royal One focuses on quality workmanship, compliant processes and reliable after-sales support for every installation.</div>
+            <div class="trust-text">Royal One focuses on quality workmanship, compliant processes and reliable
+                after-sales support for every installation.</div>
         </div>
     </section>
 
@@ -740,8 +762,12 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <div class="logo" style="color: #fff; margin-bottom: 14px"><img src="assets/ROYAL ONE logo.png" alt="Royal One logo" /></div>
-                    <p style="margin: 0; font-size: 14px; color: rgba(255, 255, 255, .8);">Premium energy upgrade solutions across Victoria.</p>
+                    <div class="logo" style="color: #fff; margin-bottom: 14px"><img src="assets/ROYAL ONE logo.png"
+                            alt="Royal One logo" /></div>
+                    <p style="margin: 0; font-size: 14px; color: rgba(255, 255, 255, .8);">Royal One Pty Ltd
+                        participates in the Victorian Energy Upgrades (VEU) scheme, helping Victorian households and
+                        businesses access more affordable energy-efficient upgrades that reduce long-term energy
+                        consumption and energy costs.</p>
                 </div>
                 <div class="footer-col">
                     <h4>Pages</h4>
@@ -777,7 +803,7 @@
     </footer>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function(){
+        document.addEventListener('DOMContentLoaded', function () {
             const toggle = document.querySelector('.nav-toggle');
             const nav = document.querySelector('.nav-links');
             if (toggle && nav) {
@@ -786,4 +812,5 @@
         });
     </script>
 </body>
+
 </html>

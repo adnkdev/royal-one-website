@@ -121,7 +121,11 @@
             letter-spacing: .5px
         }
 
-        .logo img { display: block; height: 64px; width: auto; }
+        .logo img {
+            display: block;
+            height: 64px;
+            width: auto;
+        }
 
         .logo span {
             color: var(--accent)
@@ -264,6 +268,54 @@
             font: inherit;
             outline: none;
             background: #fff
+        }
+
+        .quote-card .consent-checkbox {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 12px;
+            line-height: 1.5;
+            color: var(--muted)
+        }
+
+        .quote-card .consent-checkbox input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            margin-top: 2px;
+            padding: 0;
+            flex: 0 0 auto
+        }
+
+        .quote-card .service-options {
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 12px 14px;
+            margin: 0;
+            background: #fff;
+            display: grid;
+            gap: 8px
+        }
+
+        .quote-card .service-options legend {
+            font-weight: 600;
+            color: var(--primary-dark);
+            padding: 0 4px
+        }
+
+        .quote-card .service-options label {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--text)
+        }
+
+        .quote-card .service-options input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            padding: 0;
+            margin: 0;
+            flex: 0 0 auto
         }
 
         .stats {
@@ -623,9 +675,11 @@
                 gap: 12px;
                 font-size: 13px
             }
+
             .nav-toggle {
                 display: block;
             }
+
             .nav-links {
                 display: none
             }
@@ -643,7 +697,7 @@
                 left: 0;
                 width: 100%;
                 padding: 20px 0;
-                box-shadow: 0 4px 10px rgba(0,0,0,.1);
+                box-shadow: 0 4px 10px rgba(0, 0, 0, .1);
             }
 
             .card-grid,
@@ -665,7 +719,8 @@
             .review {
                 flex: 0 0 100%;
                 box-sizing: border-box;
-                padding: 18px 5%; /* keep cards full width but inset content for breathing room */
+                padding: 18px 5%;
+                /* keep cards full width but inset content for breathing room */
             }
 
             .prev,
@@ -694,6 +749,11 @@
 
             footer {
                 text-align: center
+            }
+
+            .footer-grid>div:first-child .logo {
+                display: flex;
+                justify-content: center
             }
 
             .footer-col h4,
@@ -743,20 +803,28 @@
                 </div>
             </div>
             <div class="quote-card">
-                <h3>Quick Enquiry</h3>
-                <p>Use this as a homepage lead form. Connect it to your CRM or email service later.</p>
+                <h3>Request a Quote</h3>
                 <form>
                     <input type="text" placeholder="Full name" />
                     <input type="tel" placeholder="Phone number" />
                     <input type="email" placeholder="Email address" />
-                    <select>
-                        <option selected disabled>Select service</option>
-                        <option>Air Conditioning</option>
-                        <option>Heat Pump Hot Water</option>
-                        <option>Solar</option>
-                        <option>Battery</option>
-                    </select>
+                    <fieldset class="service-options">
+                        <legend>Select service(s)</legend>
+                        <label><input type="checkbox" name="services" value="Air Conditioning" />Air
+                            Conditioning</label>
+                        <label><input type="checkbox" name="services" value="Heat Pump" />Heat Pump</label>
+                        <label><input type="checkbox" name="services" value="Solar" />Solar</label>
+                        <label><input type="checkbox" name="services" value="Battery" />Battery</label>
+                    </fieldset>
                     <textarea rows="4" placeholder="Tell us about your property"></textarea>
+                    <label class="consent-checkbox">
+                        <input type="checkbox" name="marketingConsent" />
+                        <span>By checking this box, you consent to Royal One Pty Ltd contacting you by phone, SMS or
+                            email for up to 24 months about energy-efficient products and services, including those
+                            available under the Victorian Energy Upgrades (VEU) scheme. Products may include
+                            air-conditioners, hot water systems, lighting, weather seals, showerheads and energy
+                            monitors. You may withdraw your consent at any time.</span>
+                    </label>
                     <button class="btn btn-primary" type="button">Submit Enquiry</button>
                 </form>
             </div>
@@ -777,30 +845,36 @@
             </div>
             <div class="card-grid">
                 <article class="card">
-                    <div class="card-image"
-                        style="background-image:url('assets/ducted-system.png')">
+                    <div class="card-image" style="background-image:url('assets/ducted-system.png')">
                     </div>
                     <div class="card-body"><span class="eyebrow">Heating & Cooling</span>
                         <h3>Air Conditioning</h3>
-                        <p>Our split and ducted air conditioning systems meet Victorian government energy efficiency standards. Designed for optimal comfort, they provide efficient heating in winter and cooling in summer, helping reduce energy costs year-round.</p><a class="link-arrow" href="air-conditioning.html">Explore now ></a>
+                        <p>Our split and ducted air conditioning systems meet Victorian government energy efficiency
+                            standards. Designed for optimal comfort, they provide efficient heating in winter and
+                            cooling in summer, helping reduce energy costs year-round.</p><a class="link-arrow"
+                            href="air-conditioning.html">Explore now ></a>
                     </div>
                 </article>
                 <article class="card">
-                    <div class="card-image"
-                        style="background-image:url('assets/ecogenica-heatpump.png')">
+                    <div class="card-image" style="background-image:url('assets/ecogenica-heatpump.png')">
                     </div>
                     <div class="card-body"><span class="eyebrow">Efficient Hot Water</span>
                         <h3>Heat Pump Systems</h3>
-                        <p>Our heat pump hot water systems are compliant with Victorian energy rebate programs. They offer efficient, eco-friendly hot water solutions that significantly lower utility bills while providing reliable performance.</p><a class="link-arrow" href="heat-pump.html">Explore now ></a>
+                        <p>Our heat pump hot water systems are compliant with Victorian energy rebate programs. They
+                            offer efficient, eco-friendly hot water solutions that significantly lower utility bills
+                            while providing reliable performance.</p><a class="link-arrow" href="heat-pump.html">Explore
+                            now ></a>
                     </div>
                 </article>
                 <article class="card">
-                    <div class="card-image"
-                        style="background-image:url('assets/solar-battery.png')">
+                    <div class="card-image" style="background-image:url('assets/solar-battery.png')">
                     </div>
                     <div class="card-body"><span class="eyebrow">Renewable Energy</span>
                         <h3>Solar & Battery</h3>
-                        <p>Our solar power and battery storage systems are fully compliant with Victorian government rebate programs. Designed to reduce grid reliance, they help lower electricity bills and make homes more sustainable with clean, renewable energy.</p><a class="link-arrow" href="solar.html">Explore now ></a>
+                        <p>Our solar power and battery storage systems are fully compliant with Victorian government
+                            rebate programs. Designed to reduce grid reliance, they help lower electricity bills and
+                            make homes more sustainable with clean, renewable energy.</p><a class="link-arrow"
+                            href="solar.html">Explore now ></a>
                     </div>
                 </article>
             </div>
@@ -842,7 +916,8 @@
                 <div class="carousel-container">
                     <div class="review active">
                         <div class="stars">★★★★★</div>
-                        <p>Great communication, smooth installation process and helpful support from start to finish.</p>
+                        <p>Great communication, smooth installation process and helpful support from start to finish.
+                        </p>
                         <strong>Sample Customer</strong>
                     </div>
                     <div class="review">
@@ -891,16 +966,25 @@
         <div class="container">
             <div class="center">
                 <h2 class="section-title">About Royal One</h2>
-                <p class="section-subtitle">Delivering affordable energy efficiency improvements for Victorian homes and businesses.</p>
             </div>
             <div class="about-wrapper">
                 <div class="about-content">
-                    <p>Royal One is a VEU (Victorian Energy Upgrades) Accredited Provider committed to helping Victorians reduce their energy bills and greenhouse gas emissions. We participate in government-backed energy efficiency programs to deliver sustainable solutions that are more affordable for consumers and reduce long-term energy consumption.</p>
-                    <p>With over 5,000+ Victorian residents trusting us for their energy needs, we have established ourselves as a leading provider of premium air conditioning, heat pump, solar, and battery storage solutions. Our mission is to make energy efficiency accessible and affordable for every household and business across Victoria.</p>
-                    <p>Today, Royal One continues this commitment by providing comprehensive home heating and cooling systems, solar panels, and battery storage solutions. We help Victorians embrace sustainable energy independence while significantly reducing their utility costs and environmental impact.</p>
+                    <p>Royal One is a VEU (Victorian Energy Upgrades) Accredited Provider committed to helping
+                        Victorians reduce their energy bills and greenhouse gas emissions. We participate in
+                        government-backed energy efficiency programs to deliver sustainable solutions that are more
+                        affordable for consumers and reduce long-term energy consumption.</p>
+                    <p>With over 5,000+ Victorian residents trusting us for their energy needs, we have established
+                        ourselves as a leading provider of premium air conditioning, heat pump, solar, and battery
+                        storage solutions. Our mission is to make energy efficiency accessible and affordable for every
+                        household and business across Victoria.</p>
+                    <p>Today, Royal One continues this commitment by providing comprehensive home heating and cooling
+                        systems, solar panels, and battery storage solutions. We help Victorians embrace sustainable
+                        energy independence while significantly reducing their utility costs and environmental impact.
+                    </p>
                 </div>
                 <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1494475754312-52581002a6fe?auto=format&fit=crop&w=600&q=80" alt="Royal One Energy Solutions" />
+                    <img src="https://images.unsplash.com/photo-1494475754312-52581002a6fe?auto=format&fit=crop&w=600&q=80"
+                        alt="Royal One Energy Solutions" />
                 </div>
             </div>
             <div class="about-stats">
@@ -923,8 +1007,11 @@
         <div class="container">
             <div class="footer-grid">
                 <div>
-                    <div class="logo" style="color:#fff;margin-bottom:14px"><img src="assets/ROYAL ONE logo.png" alt="Royal One logo" /></div>
-                    <p>Premium energy upgrade solutions across Victoria.</p>
+                    <div class="logo" style="color:#fff;margin-bottom:14px"><img src="assets/ROYAL ONE logo.png"
+                            alt="Royal One logo" /></div>
+                    <p>Royal One Pty Ltd participates in the Victorian Energy Upgrades (VEU) scheme, helping Victorian
+                        households and businesses access more affordable energy-efficient upgrades that reduce long-term
+                        energy consumption and energy costs.</p>
                 </div>
                 <div class="footer-col">
                     <h4>Pages</h4>
@@ -952,12 +1039,11 @@
                     </ul>
                 </div>
             </div>
-            <div class="footer-bottom"><span>© 2026 Royal One. All rights reserved.</span><span>Multi-page website
-                    template</span></div>
+            <div class="footer-bottom"><span>© 2026 Royal One. All rights reserved.</span></div>
         </div>
     </footer>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             let currentIndex = 0;
             const carouselContainer = document.querySelector('.carousel-container');
             const reviews = document.querySelectorAll('.review');
@@ -1000,7 +1086,7 @@
             });
 
             // Keyboard navigation
-            document.addEventListener('keydown', function(e) {
+            document.addEventListener('keydown', function (e) {
                 if (e.key === 'ArrowLeft') {
                     prevReview();
                 } else if (e.key === 'ArrowRight') {

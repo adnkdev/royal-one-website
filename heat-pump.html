@@ -481,6 +481,58 @@
             line-height: 1.6
         }
 
+          .trust-section {
+            background: linear-gradient(120deg, rgba(8, 42, 73, .92), rgba(12, 59, 102, .8));
+            color: #ffffff;
+            text-align: center
+        }
+
+        .trust-section .section-title {
+            color: #ffffff
+        }
+
+        .trust-section .section-subtitle {
+            color: rgba(255, 255, 255, .88)
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+            margin-top: 42px
+        }
+
+        .stat-block {
+            background: rgba(255, 255, 255, .08);
+            border-radius: var(--radius);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, .1);
+            padding: 28px 22px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, .1);
+            backdrop-filter: blur(8px)
+        }
+
+        .stat-number {
+            display: block;
+            font-size: 34px;
+            color: rgba(47, 163, 107, .9);
+            margin-bottom: 6px;
+            font-weight: 800
+        }
+
+        .stat-label {
+            color: rgba(255, 255, 255, .8);
+            font-size: 15px
+        }
+
+        .trust-text {
+            max-width: 800px;
+            margin: 28px auto 0;
+            font-size: 16px;
+            color: rgba(255, 255, 255, .8);
+            line-height: 1.8
+        }
+
         footer {
             background: #071f34;
             color: rgba(255, 255, 255, .9);
@@ -726,79 +778,26 @@
         </div>
     </section>
 
-    <!-- Benefits Section -->
-    <section class="section benefits-section">
-        <div class="container center">
-            <h2 class="section-title">Energy-Efficient Heat Pump Hot Water Systems</h2>
-            <div class="benefits-intro">
-                <p class="section-subtitle">Heat pump hot water systems are designed to deliver reliable hot water while
-                    using significantly less electricity than conventional systems.</p>
-            </div>
-            <div class="benefits-grid">
-                <div class="benefit-block">
-                    <h3>Lower Energy Use</h3>
-                    <p>Air source heat pump systems can be several times more energy efficient than traditional electric
-                        hot water units.</p>
-                </div>
-                <div class="benefit-block">
-                    <h3>Environmentally Smarter</h3>
-                    <p>Systems using R290 refrigerant offer low global warming potential and improved environmental
-                        performance.</p>
-                </div>
-                <div class="benefit-block">
-                    <h3>Long-Term Savings</h3>
-                    <p>By lowering running costs, heat pump systems can help households reduce ongoing utility bills
-                        over time.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Trust Section -->
+    <!-- Trust / Stats Section -->
     <section class="section trust-section">
         <div class="container center">
             <h2 class="section-title">Trusted by Victorian Households</h2>
-            <div class="trust-text">Royal One has helped hundreds of Victorian customers upgrade to more efficient hot
-                water solutions with a focus on quality, compliance and reliable support.</div>
-            <div class="trust-grid">
-                <div class="trust-item">
-                    <strong>Hundreds of Happy Customers</strong>
-                    <p>Trusted by families across Victoria for professional service.</p>
+            <div class="stats-grid">
+                <div class="stat-block">
+                    <strong class="stat-number">5,000+</strong>
+                    <span class="stat-label">Homes Upgraded</span>
                 </div>
-                <div class="trust-item">
-                    <strong>Fully Licensed Installation Teams</strong>
-                    <p>Experienced professionals delivering quality workmanship.</p>
+                <div class="stat-block">
+                    <strong class="stat-number">100%</strong>
+                    <span class="stat-label">Fully Compliant Installations</span>
                 </div>
-                <div class="trust-item">
-                    <strong>Compliant Upgrade Process</strong>
-                    <p>Full compliance with VEU and STC program requirements.</p>
+                <div class="stat-block">
+                    <strong class="stat-number">24/7</strong>
+                    <span class="stat-label">Ongoing Customer Support</span>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- After-Sales Support Section -->
-    <section class="section support-section">
-        <div class="container center">
-            <h2 class="section-title">Reliable After-Sales Support</h2>
-            <div class="support-intro">
-                <p class="section-subtitle">We're here for you even after installation. Royal One provides ongoing
-                    support for warranty enquiries, customer questions and post-installation assistance.</p>
-            </div>
-            <div class="support-grid">
-                <div class="support-item">
-                    <h3>Dedicated Customer Support</h3>
-                    <p>Easy access to our support team for any questions or concerns.</p>
-                </div>
-                <div class="support-item">
-                    <h3>Warranty Assistance</h3>
-                    <p>We help manage warranty claims and service requests on your behalf.</p>
-                </div>
-                <div class="support-item">
-                    <h3>Real People, Real Solutions</h3>
-                    <p>Personalized support from professionals who care about your experience.</p>
-                </div>
-            </div>
+            <div class="trust-text">Royal One focuses on quality workmanship, compliant processes and reliable
+                after-sales support for every installation.</div>
         </div>
     </section>
 

@@ -319,6 +319,58 @@
             color: rgba(255, 255, 255, 0.82);
         }
 
+        .trust-section {
+            background: linear-gradient(120deg, rgba(8, 42, 73, .92), rgba(12, 59, 102, .8));
+            color: #ffffff;
+            text-align: center
+        }
+
+        .trust-section .section-title {
+            color: #ffffff
+        }
+
+        .trust-section .section-subtitle {
+            color: rgba(255, 255, 255, .88)
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+            margin-top: 42px
+        }
+
+        .stat-block {
+            background: rgba(255, 255, 255, .08);
+            border-radius: var(--radius);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, .1);
+            padding: 28px 22px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, .1);
+            backdrop-filter: blur(8px)
+        }
+
+        .stat-number {
+            display: block;
+            font-size: 34px;
+            color: rgba(47, 163, 107, .9);
+            margin-bottom: 6px;
+            font-weight: 800
+        }
+
+        .stat-label {
+            color: rgba(255, 255, 255, .8);
+            font-size: 15px
+        }
+
+        .trust-text {
+            max-width: 800px;
+            margin: 28px auto 0;
+            font-size: 16px;
+            color: rgba(255, 255, 255, .8);
+            line-height: 1.8
+        }
+
         footer {
             background: #071f34;
             color: rgba(255, 255, 255, 0.9);
@@ -512,60 +564,6 @@
         </div>
     </section>
 
-    <section class="section center">
-        <div class="container">
-            <h2 class="section-title">Rebates for Solar Battery</h2>
-            <p class="section-subtitle">Approximate rebate available for a 10kW solar battery system: $3,000 to $3,500.
-            </p>
-            <p class="rebate-note">Rebate values may vary depending on product eligibility, program requirements and
-                installation conditions.</p>
-        </div>
-    </section>
-
-    <section class="section trust-section">
-        <div class="container center">
-            <h2 class="section-title">Trusted by Victorian Households</h2>
-            <p class="section-subtitle">Royal One has completed over 2,000 installation jobs and continues to support
-                customers with reliable, compliant and high-quality energy upgrade solutions.</p>
-            <div class="simple-grid">
-                <div class="trust-item">
-                    <strong>Over 2,000 Installations Completed</strong>
-                    <p>Strong delivery track record across residential projects in Victoria.</p>
-                </div>
-                <div class="trust-item">
-                    <strong>Happy Customers Across Victoria</strong>
-                    <p>Trusted by local households for clear communication and dependable service.</p>
-                </div>
-                <div class="trust-item">
-                    <strong>Fully Licensed and Experienced Installation Teams</strong>
-                    <p>Professional teams focused on safety, quality workmanship and compliance.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section support-section">
-        <div class="container center">
-            <h2 class="section-title">Reliable After-Sales Support</h2>
-            <p class="section-subtitle">We're here for you even after installation. Royal One provides ongoing support
-                for warranty enquiries, customer questions and post-installation assistance.</p>
-            <div class="simple-grid">
-                <div class="card">
-                    <h3>Dedicated Support Team</h3>
-                    <p>Easy access to knowledgeable staff for product and system enquiries.</p>
-                </div>
-                <div class="card">
-                    <h3>Warranty and Customer Assistance</h3>
-                    <p>Practical help for warranty follow-up, service coordination and support requests.</p>
-                </div>
-                <div class="card">
-                    <h3>Real People, Real Solutions</h3>
-                    <p>Personal and practical support from a team focused on long-term customer value.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <section class="section brands-section">
         <div class="container center">
             <h2 class="section-title">Solar Battery Brands</h2>
@@ -614,6 +612,29 @@
                 <li>Please contact us to confirm any additional eligibility requirements.</li>
             </ul>
             <a href="contact.html" class="btn btn-primary">Check My Eligibility</a>
+        </div>
+    </section>
+
+    <!-- Trust / Stats Section -->
+    <section class="section trust-section">
+        <div class="container center">
+            <h2 class="section-title">Trusted by Victorian Households</h2>
+            <div class="stats-grid">
+                <div class="stat-block">
+                    <strong class="stat-number">5,000+</strong>
+                    <span class="stat-label">Homes Upgraded</span>
+                </div>
+                <div class="stat-block">
+                    <strong class="stat-number">100%</strong>
+                    <span class="stat-label">Fully Compliant Installations</span>
+                </div>
+                <div class="stat-block">
+                    <strong class="stat-number">24/7</strong>
+                    <span class="stat-label">Ongoing Customer Support</span>
+                </div>
+            </div>
+            <div class="trust-text">Royal One focuses on quality workmanship, compliant processes and reliable
+                after-sales support for every installation.</div>
         </div>
     </section>
 

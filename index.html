@@ -361,7 +361,7 @@
             grid-template-columns: 1.1fr .9fr;
             gap: 48px;
             align-items: center;
-            margin: 42px 0
+            margin: 18px 0 42px
         }
 
         .about-content {
@@ -530,7 +530,8 @@
         }
 
         .review {
-            min-width: 100%;
+            flex: 0 0 100%;
+            box-sizing: border-box;
             background: #fff;
             border: 1px solid var(--border);
             border-radius: 10px;
@@ -562,11 +563,11 @@
         }
 
         .prev {
-            left: -50px
+            left: 12px
         }
 
         .next {
-            right: -50px
+            right: 12px
         }
 
         .dots {
@@ -600,13 +601,28 @@
             margin-bottom: 12px
         }
 
+        .review-photo {
+            width: 100%;
+            height: 238px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-bottom: 14px;
+            border: 1px solid #e9edf3
+        }
+
         .review p {
             color: var(--muted);
-            margin: 0 0 16px
+            margin: 0 0 16px;
+            overflow-wrap: anywhere
         }
 
         .review strong {
-            color: var(--primary-dark)
+            color: var(--primary-dark);
+            overflow-wrap: anywhere
+        }
+
+        .review-author {
+            margin-top: 2px
         }
 
         footer {
@@ -710,6 +726,7 @@
             .carousel {
                 max-width: 100%;
                 margin: 24px auto 0;
+                padding: 0;
             }
 
             .carousel-container {
@@ -790,8 +807,8 @@
         <div class="container hero-grid">
             <div>
                 <h1>Royal One Energy Solutions for Victorian Homes</h1>
-                <p>Build a strong first impression with a modern multi-page website for air conditioning, heat pump hot
-                    water, solar and battery solutions.</p>
+                <p>Helping households upgrade to energy-efficient air conditioning, heat pump hot water, solar and
+                    battery systems through trusted installation and expert service.</p>
                 <div class="hero-actions">
                     <a href="air-conditioning.html" class="btn btn-primary">Explore Services</a>
                     <a href="contact.html" class="btn btn-outline">Request a Quote</a>
@@ -911,40 +928,77 @@
     <section class="section">
         <div class="container center">
             <h2 class="section-title">Customer Reviews</h2>
-            <p class="section-subtitle">Replace these sample reviews with your real Google reviews later.</p>
+            <p class="section-subtitle">Real feedback from Victorian households who upgraded with Royal One.</p>
             <div class="carousel">
                 <div class="carousel-container">
                     <div class="review active">
+                        <img class="review-photo" src="assets/aircon-outdoor-2.JPG"
+                            alt="Installed air conditioning system for Sarah M." loading="lazy" />
                         <div class="stars">★★★★★</div>
-                        <p>Great communication, smooth installation process and helpful support from start to finish.
-                        </p>
-                        <strong>Sample Customer</strong>
+                        <p>Royal One installed a ducted air conditioning system in our home and the entire process was
+                            smooth from start to finish. The team explained the rebate process clearly and handled all
+                            the paperwork. Installation was completed professionally and the house cools evenly now.
+                            Highly recommend their service.</p>
+                        <div class="review-author">
+                            <strong>Sarah M. - Craigieburn VIC</strong>
+                        </div>
                     </div>
                     <div class="review">
+                        <img class="review-photo" src="assets/aircon-indoor-2.JPG"
+                            alt="Installed multi-split system for Daniel K." loading="lazy" />
                         <div class="stars">★★★★★</div>
-                        <p>The whole job felt organised and professional. Very happy with the service and follow-up.</p>
-                        <strong>Sample Customer</strong>
+                        <p>We had a ducted air conditioning installed by Royal One to replace our old heating. The
+                            consultants were very knowledgeable and helped us choose the right system for our home. The
+                            installation team arrived on time and left everything clean afterwards. Very happy with the
+                            result.</p>
+                        <div class="review-author">
+                            <strong>Daniel K. - Point Cook VIC</strong>
+                        </div>
                     </div>
                     <div class="review">
+                        <img class="review-photo" src="assets/aircon-outdoor-1.JPG"
+                            alt="Installed ducted air conditioning for Priya R." loading="lazy" />
                         <div class="stars">★★★★★</div>
-                        <p>They explained the upgrade clearly and helped us choose the right option for our home.</p>
-                        <strong>Sample Customer</strong>
+                        <p>Royal One installed our new ducted air conditioning system and we could not be happier. They
+                            explained the available rebates clearly which reduced the cost significantly. The
+                            technicians were polite, efficient and showed us how to use the system before leaving.</p>
+                        <div class="review-author">
+                            <strong>Priya R. - Box Hill VIC</strong>
+                        </div>
                     </div>
                     <!-- additional reviews -->
                     <div class="review">
+                        <img class="review-photo" src="assets/aircon-indoor-1.JPG"
+                            alt="Installed multi-split air conditioning for Michael L." loading="lazy" />
                         <div class="stars">★★★★★</div>
-                        <p>Fantastic communication and very tidy installation. Would highly recommend Royal One.</p>
-                        <strong>Sample Customer</strong>
+                        <p>Great experience with Royal One. We installed a ducted air conditioning system and the
+                            difference in comfort is amazing. The team was professional and the installation was
+                            completed quicker than expected. The pricing was also very competitive.</p>
+                        <div class="review-author">
+                            <strong>Michael L. - Frankston VIC</strong>
+                        </div>
                     </div>
                     <div class="review">
+                        <img class="review-photo" src="assets/heatpump-1.JPG"
+                            alt="Heat pump hot water installation for Ahmed S." loading="lazy" />
                         <div class="stars">★★★★★</div>
-                        <p>Quick response time and excellent advice. Our energy bills have dropped significantly.</p>
-                        <strong>Sample Customer</strong>
+                        <p>Royal One installed a heat pump hot water system at our property and handled everything
+                            including the rebate process. The installation was quick and the system is working
+                            perfectly. It is much more energy efficient than our old unit.</p>
+                        <div class="review-author">
+                            <strong>Ahmed S. - Epping VIC</strong>
+                        </div>
                     </div>
                     <div class="review">
+                        <img class="review-photo" src="assets/heatpump-landing.jfif"
+                            alt="Heat pump hot water installation for Jessica T." loading="lazy" />
                         <div class="stars">★★★★★</div>
-                        <p>Professional team, clean work and very knowledgeable about regulations and rebates.</p>
-                        <strong>Sample Customer</strong>
+                        <p>Very happy with the heat pump hot water system installation by Royal One. The team explained
+                            the benefits clearly and managed the entire process professionally. The system is quiet and
+                            we have already noticed lower energy usage.</p>
+                        <div class="review-author">
+                            <strong>Jessica T. - Dandenong VIC</strong>
+                        </div>
                     </div>
 
                 </div>
@@ -966,6 +1020,8 @@
         <div class="container">
             <div class="center">
                 <h2 class="section-title">About Royal One</h2>
+                <p class="section-subtitle">Your trusted provider for energy-efficient home upgrades across Victoria.
+                </p>
             </div>
             <div class="about-wrapper">
                 <div class="about-content">

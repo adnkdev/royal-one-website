@@ -244,6 +244,16 @@
             font-size: 15px;
         }
 
+        .brand-card-image {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 14px;
+            border: 1px solid #eaf0f4;
+            display: block;
+        }
+
         .brands-section,
         .support-section,
         .eligibility-questions {
@@ -273,6 +283,39 @@
             border-radius: 14px;
             padding: 14px 16px;
             box-shadow: var(--shadow);
+        }
+
+        .solar-battery-image {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            margin: 0;
+            border-radius: 14px;
+            box-shadow: var(--shadow);
+            border: 1px solid #eaf0f4;
+            display: block;
+        }
+
+        .solar-battery-layout {
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1.1fr .9fr;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .solar-battery-copy {
+            text-align: left;
+        }
+
+        .solar-battery-copy .section-subtitle {
+            max-width: none;
+            margin: 0;
+            text-align: left;
+        }
+
+        .solar-battery-copy .section-subtitle+.section-subtitle {
+            margin-top: 20px;
         }
 
         .checklist {
@@ -420,6 +463,11 @@
             .footer-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
+
+            .solar-battery-layout {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
         }
 
         @media (max-width: 760px) {
@@ -459,6 +507,14 @@
                 grid-template-columns: 1fr;
             }
 
+            .solar-battery-copy {
+                text-align: center;
+            }
+
+            .solar-battery-copy .section-subtitle {
+                text-align: center;
+            }
+
             .section {
                 padding: 48px 0;
             }
@@ -491,16 +547,16 @@
 
     <header>
         <div class="container navbar">
-            <a href="index.html" class="logo"><img src="assets/ROYAL ONE logo.png" alt="Royal One logo" /></a>
+            <a href="/" class="logo"><img src="assets/ROYAL ONE logo.png" alt="Royal One logo" /></a>
             <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
             <nav class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="air-conditioning.html">Air Conditioning</a>
-                <a href="heat-pump.html">Heat Pump</a>
-                <a class="active" href="solar.html">Solar</a>
-                <a href="contact.html">Contact</a>
+                <a href="/">Home</a>
+                <a href="/air-conditioning">Air Conditioning</a>
+                <a href="/heat-pump">Heat Pump</a>
+                <a class="active" href="/solar">Solar</a>
+                <a href="/contact">Contact</a>
             </nav>
-            <a href="contact.html" class="btn btn-primary">Get a Quote</a>
+            <a href="/contact" class="btn btn-primary">Get a Quote</a>
         </div>
     </header>
 
@@ -514,20 +570,31 @@
                 with clean and sustainable solutions.</p>
             <div class="hero-buttons">
                 <a href="#check-eligibility" class="btn btn-primary">Check Eligibility</a>
-                <a href="contact.html" class="btn btn-secondary">Request a Free Quote</a>
+                <a href="/contact" class="btn btn-secondary">Request a Free Quote</a>
             </div>
         </div>
     </section>
 
-    <section class="section" style="background: var(--bg)">
+    <section class="section brands-section">
         <div class="container center">
-            <h2 class="section-title">Solar Battery</h2>
-            <div style="max-width: 860px; margin: 0 auto;">
-                <p class="section-subtitle">Solar battery systems allow households to store excess solar energy for
-                    later use, helping reduce grid reliance and improve energy independence.</p>
-                <p class="section-subtitle" style="margin-top: 20px;">By adding a battery to your solar setup, you can
-                    maximise the value of your solar generation, improve backup capability, and make better use of clean
-                    energy throughout the day and night.</p>
+            <h2 class="section-title">Solar Battery Brands</h2>
+            <div class="simple-grid brands-grid">
+                <div class="card">
+                    <img class="brand-card-image" src="assets/GSL logo.png" alt="Growatt solar battery system" loading="lazy" />
+                    <h3>GSL</h3>
+                </div>
+                <div class="card">
+                    <img class="brand-card-image" src="assets/goodwelogo.png" alt="Alpha solar battery solution" loading="lazy" />
+                    <h3>GoodWe</h3>
+                </div>
+                <div class="card">
+                    <img class="brand-card-image" src="assets/AlphaEss_Logo.png" alt="SAJ battery storage technology" loading="lazy" />
+                    <h3>SAJ</h3>
+                </div>
+                <div class="card">
+                    <img class="brand-card-image" src="assets/eco-house-design.jpg" alt="GoodWe home battery system" loading="lazy" />
+                    <h3>Alpha</h3>
+                </div>
             </div>
         </div>
     </section>
@@ -538,7 +605,7 @@
             <p class="section-subtitle">Please contact us for more information regarding solar battery rebate
                 eligibility and available support options.</p>
             <div style="margin-top: 28px;">
-                <a href="contact.html" class="btn btn-primary">Contact Us</a>
+                <a href="/contact" class="btn btn-primary">Contact Us</a>
             </div>
         </div>
     </section>
@@ -557,63 +624,15 @@
                 </div>
                 <div class="card">
                     <h3>Fully Compliant</h3>
-                    <p>Our installations follow applicable compliance requirements under the Victorian Energy Upgrades
-                        (VEU) Program and STCs.</p>
+                    <p>Our solar battery installations follow the applicable requirements under the Small-scale
+                        Renewable Energy Scheme (SRES).</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="section brands-section">
-        <div class="container center">
-            <h2 class="section-title">Solar Battery Brands</h2>
-            <div class="simple-grid brands-grid">
-                <div class="card">
-                    <h3>Growatt</h3>
-                    <p>Reliable solar battery solutions designed for efficient residential energy storage.</p>
-                </div>
-                <div class="card">
-                    <h3>Alpha</h3>
-                    <p>Advanced battery storage systems built for strong performance and dependable energy backup.</p>
-                </div>
-                <div class="card">
-                    <h3>SAJ</h3>
-                    <p>Smart energy storage technology designed to improve solar self-consumption and household
-                        efficiency.</p>
-                </div>
-                <div class="card">
-                    <h3>GoodWe</h3>
-                    <p>High-quality battery systems with intelligent energy management and strong residential
-                        performance.</p>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <section class="section center">
-        <div class="container">
-            <h2 class="section-title">Service</h2>
-            <ul class="service-grid">
-                <li>Solar Battery System Supply</li>
-                <li>Installation Support</li>
-                <li>Rebate Assistance</li>
-                <li>After-Sales Support</li>
-            </ul>
-        </div>
-    </section>
 
-    <section class="section eligibility-questions" id="check-eligibility">
-        <div class="container center">
-            <h2 class="section-title">Check Your Eligibility</h2>
-            <ul class="checklist">
-                <li>Are you the only owner of the property?</li>
-                <li>Is the combined household income less than $210,000 per year?</li>
-                <li>Is the property value under $3,000,000?</li>
-                <li>Please contact us to confirm any additional eligibility requirements.</li>
-            </ul>
-            <a href="contact.html" class="btn btn-primary">Check My Eligibility</a>
-        </div>
-    </section>
 
     <!-- Trust / Stats Section -->
     <section class="section trust-section">
@@ -652,18 +671,18 @@
                 <div class="footer-col">
                     <h4>Pages</h4>
                     <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="air-conditioning.html">Air Conditioning</a></li>
-                        <li><a href="heat-pump.html">Heat Pump</a></li>
-                        <li><a href="solar.html">Solar</a></li>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/air-conditioning">Air Conditioning</a></li>
+                        <li><a href="/heat-pump">Heat Pump</a></li>
+                        <li><a href="/solar">Solar</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
                     <h4>Support</h4>
                     <ul>
-                        <li><a href="contact.html">Contact</a></li>
-                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                        <li><a href="terms-and-conditions.html">Terms &amp; Conditions</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                        <li><a href="/privacy-policy">Privacy Policy</a></li>
+                        <li><a href="/terms-and-conditions">Terms &amp; Conditions</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">

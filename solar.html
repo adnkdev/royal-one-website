@@ -5,6 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Royal One | Solar Battery Rebates</title>
+    <link rel="icon" type="image/png" href="assets/ROYAL ONE logo.png" />
     <style>
         :root {
             --primary: #0c3b66;
@@ -266,6 +267,12 @@
             display: block;
         }
 
+        .brand-card-image--contain {
+            object-fit: contain;
+            padding: 12px;
+            background: #fff;
+        }
+
         .brands-section,
         .support-section,
         .eligibility-questions {
@@ -327,7 +334,18 @@
         }
 
         .solar-battery-copy .section-subtitle+.section-subtitle {
-            margin-top: 20px;
+            margin-top: 32px;
+        }
+
+        .eligibility-actions {
+            margin-top: 28px;
+        }
+
+        .eligibility-subheading {
+            margin: 34px 0 10px;
+            font-size: clamp(24px, 3vw, 30px);
+            line-height: 1.2;
+            color: var(--primary-dark);
         }
 
         .checklist {
@@ -547,6 +565,11 @@
                 text-align: center;
             }
 
+            .solar-battery-image {
+                max-width: 520px;
+                margin: 0 auto;
+            }
+
             .navbar {
                 position: relative;
                 display: grid;
@@ -640,22 +663,27 @@
     <section class="section brands-section">
         <div class="container center">
             <h2 class="section-title">Solar Battery Brands</h2>
-            <p class="section-subtitle">We partner with trusted global battery manufacturers to deliver reliable, high-performance energy storage solutions for Australian homes.</p>
+            <p class="section-subtitle">We partner with trusted global battery manufacturers to deliver reliable,
+                high-performance energy storage solutions for Australian homes.</p>
             <div class="simple-grid brands-grid">
                 <div class="card">
-                    <img class="brand-card-image" src="assets/GSL logo.png" alt="Growatt solar battery system" loading="lazy" />
+                    <img class="brand-card-image" src="assets/GSL logo.png" alt="Growatt solar battery system"
+                        loading="lazy" />
                     <h3>GSL</h3>
                 </div>
                 <div class="card">
-                    <img class="brand-card-image" src="assets/goodwelogo.png" alt="Alpha solar battery solution" loading="lazy" />
+                    <img class="brand-card-image brand-card-image--contain" src="assets/goodwelogo.png" alt="GoodWe solar battery solution"
+                        loading="lazy" />
                     <h3>GoodWe</h3>
                 </div>
                 <div class="card">
-                    <img class="brand-card-image" src="assets/AlphaEss_Logo.png" alt="SAJ battery storage technology" loading="lazy" />
+                    <img class="brand-card-image brand-card-image--contain" src="assets/saj-logo.png" alt="SAJ battery storage technology"
+                        loading="lazy" />
                     <h3>SAJ</h3>
                 </div>
                 <div class="card">
-                    <img class="brand-card-image" src="assets/eco-house-design.jpg" alt="GoodWe home battery system" loading="lazy" />
+                    <img class="brand-card-image brand-card-image--contain" src="assets/AlphaEss_Logo.png" alt="Alpha home battery system"
+                        loading="lazy" />
                     <h3>Alpha</h3>
                 </div>
             </div>
@@ -664,18 +692,26 @@
 
     <section class="section center" id="eligibility-rebates">
         <div class="container">
-            <h2 class="section-title">Eligibility for Rebates</h2>
-            <p class="section-subtitle">Please contact us for more information regarding solar battery rebate
-                eligibility and available support options.</p>
-            <div style="margin-top: 28px;">
-                <a href="contact.html" class="btn btn-primary">Contact Us</a>
+            <div class="solar-battery-layout">
+                <div class="solar-battery-copy">
+                    <h2 class="section-title">Eligibility for Rebates</h2>
+                    <p class="section-subtitle">Eligibility for solar battery rebates may vary depending on your
+                        property type, existing solar system, and installation requirements. Our team can help assess
+                        your situation and provide guidance on the available rebate options.</p>
+                    <p class="section-subtitle">Get in touch with Royal One to learn more about current solar battery
+                        rebates and how you can benefit from installing battery storage.</p>
+                    <div class="eligibility-actions">
+                        <a href="contact.html" class="btn btn-primary">Contact Us</a>
+                    </div>
+                </div>
+                <img class="solar-battery-image" src="assets/solar-battery.png" alt="Solar battery rebate eligibility"
+                    loading="lazy" />
             </div>
         </div>
     </section>
 
     <section class="section" style="background: var(--bg)">
         <div class="container center">
-            <h2 class="section-title">Rebates Made Simple</h2>
             <div class="simple-grid">
                 <div class="card">
                     <div class="card-icon">⚡</div>
@@ -703,7 +739,7 @@
     <!-- Trust / Stats Section -->
     <section class="section trust-section">
         <div class="container center">
-            <h2 class="section-title">Trusted by Victorian Households</h2>
+
             <div class="stats-grid">
                 <div class="stat-block">
                     <strong class="stat-number">5,000+</strong>

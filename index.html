@@ -5,6 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Royal One | Home</title>
+    <link rel="icon" type="image/png" href="assets/ROYAL ONE logo.png" />
     <style>
         :root {
             --primary: #0c3b66;
@@ -185,7 +186,7 @@
         }
 
         .hero {
-            background: linear-gradient(120deg, rgba(8, 42, 73, .92), rgba(12, 59, 102, .8)), url('https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1600&q=80') center/cover;
+            background: linear-gradient(120deg, rgba(8, 42, 73, .92), rgba(12, 59, 102, .8)), url('assets/eco-house-design.jpg') center/cover;
             color: #fff
         }
 
@@ -360,7 +361,7 @@
             display: grid;
             grid-template-columns: 1.1fr .9fr;
             gap: 48px;
-            align-items: center;
+            align-items: stretch;
             margin: 18px 0 42px
         }
 
@@ -378,12 +379,14 @@
         .about-image {
             border-radius: var(--radius);
             overflow: hidden;
-            box-shadow: var(--shadow)
+            box-shadow: var(--shadow);
+            height: 100%
         }
 
         .about-image img {
             width: 100%;
-            height: auto;
+            height: 100%;
+            object-fit: cover;
             display: block
         }
 
@@ -433,6 +436,17 @@
             box-shadow: var(--shadow);
             border: 1px solid #eef2f7;
             transition: .25s ease
+        }
+
+        .card-link {
+            display: block;
+            height: 100%;
+            color: inherit
+        }
+
+        .card-link:focus-visible {
+            outline: 3px solid var(--accent);
+            outline-offset: -3px
         }
 
         .card:hover {
@@ -671,6 +685,14 @@
                 grid-template-columns: 1fr
             }
 
+            .about-image {
+                height: auto
+            }
+
+            .about-image img {
+                height: auto
+            }
+
             .card-grid {
                 grid-template-columns: repeat(2, 1fr)
             }
@@ -892,37 +914,43 @@
             </div>
             <div class="card-grid">
                 <article class="card">
-                    <div class="card-image" style="background-image:url('assets/ducted-system.png')">
-                    </div>
-                    <div class="card-body"><span class="eyebrow">Heating & Cooling</span>
-                        <h3>Air Conditioning</h3>
-                        <p>Our split and ducted air conditioning systems meet Victorian government energy efficiency
-                            standards. Designed for optimal comfort, they provide efficient heating in winter and
-                            cooling in summer, helping reduce energy costs year-round.</p><a class="link-arrow"
-                            href="air-conditioning.html">Explore now ></a>
-                    </div>
+                    <a class="card-link" href="air-conditioning.html" aria-label="Explore Air Conditioning service">
+                        <div class="card-image" style="background-image:url('assets/ducted-system.png')">
+                        </div>
+                        <div class="card-body"><span class="eyebrow">Heating & Cooling</span>
+                            <h3>Air Conditioning</h3>
+                            <p>Our split and ducted air conditioning systems meet Victorian government energy
+                                efficiency standards. Designed for optimal comfort, they provide efficient heating in
+                                winter and cooling in summer, helping reduce energy costs year-round.</p><span
+                                class="link-arrow">Explore now ></span>
+                        </div>
+                    </a>
                 </article>
                 <article class="card">
-                    <div class="card-image" style="background-image:url('assets/ecogenica-heatpump.png')">
-                    </div>
-                    <div class="card-body"><span class="eyebrow">Efficient Hot Water</span>
-                        <h3>Heat Pump Systems</h3>
-                        <p>Our heat pump hot water systems are compliant with Victorian energy rebate programs. They
-                            offer efficient, eco-friendly hot water solutions that significantly lower utility bills
-                            while providing reliable performance.</p><a class="link-arrow" href="heat-pump.html">Explore
-                            now ></a>
-                    </div>
+                    <a class="card-link" href="heat-pump.html" aria-label="Explore Heat Pump Systems service">
+                        <div class="card-image" style="background-image:url('assets/ecogenica-heatpump.png')">
+                        </div>
+                        <div class="card-body"><span class="eyebrow">Efficient Hot Water</span>
+                            <h3>Heat Pump Systems</h3>
+                            <p>Our heat pump hot water systems are compliant with Victorian energy rebate programs.
+                                They offer efficient, eco-friendly hot water solutions that significantly lower utility
+                                bills while providing reliable performance.</p><span class="link-arrow">Explore now
+                                ></span>
+                        </div>
+                    </a>
                 </article>
                 <article class="card">
-                    <div class="card-image" style="background-image:url('assets/solar-battery.png')">
-                    </div>
-                    <div class="card-body"><span class="eyebrow">Renewable Energy</span>
-                        <h3>Solar & Battery</h3>
-                        <p>Our solar power and battery storage systems are fully compliant with Victorian government
-                            rebate programs. Designed to reduce grid reliance, they help lower electricity bills and
-                            make homes more sustainable with clean, renewable energy.</p><a class="link-arrow"
-                            href="solar.html">Explore now ></a>
-                    </div>
+                    <a class="card-link" href="solar.html" aria-label="Explore Solar and Battery service">
+                        <div class="card-image" style="background-image:url('assets/solar-battery.png')">
+                        </div>
+                        <div class="card-body"><span class="eyebrow">Renewable Energy</span>
+                            <h3>Solar & Battery</h3>
+                            <p>Our solar power and battery storage systems are fully compliant with Victorian
+                                government rebate programs. Designed to reduce grid reliance, they help lower
+                                electricity bills and make homes more sustainable with clean, renewable energy.</p><span
+                                class="link-arrow">Explore now ></span>
+                        </div>
+                    </a>
                 </article>
             </div>
         </div>
@@ -1069,7 +1097,7 @@
                     </p>
                 </div>
                 <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1494475754312-52581002a6fe?auto=format&fit=crop&w=600&q=80"
+                    <img src="assets/eco-house-design.jpg"
                         alt="Royal One Energy Solutions" />
                 </div>
             </div>

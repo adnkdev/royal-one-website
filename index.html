@@ -768,6 +768,36 @@
                 text-align: center
             }
 
+            .navbar {
+                position: relative;
+                display: grid;
+                grid-template-columns: 1fr auto 1fr;
+                align-items: center;
+                gap: 10px
+            }
+
+            .navbar .logo {
+                grid-column: 1;
+                justify-self: start
+            }
+
+            .nav-toggle {
+                grid-column: 2;
+                justify-self: center
+            }
+
+            .navbar>.btn {
+                grid-column: 3;
+                justify-self: end;
+                width: auto;
+                min-width: 132px;
+                margin: 0;
+                padding: 10px 16px;
+                justify-content: center;
+                text-align: center;
+                white-space: nowrap
+            }
+
             .footer-grid>div:first-child .logo {
                 display: flex;
                 justify-content: center
@@ -900,7 +930,7 @@
     <section class="section process">
         <div class="container center">
             <h2 class="section-title">How It Works</h2>
-            <p class="section-subtitle">Keep the process simple, visual and easy to understand.</p>
+            <p class="section-subtitle">A simple 4-step process from enquiry to installation and ongoing support.</p>
             <div class="process-grid">
                 <div class="process-card">
                     <div class="process-number">1</div>

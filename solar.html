@@ -535,6 +535,36 @@
                 text-align: center;
             }
 
+            .navbar {
+                position: relative;
+                display: grid;
+                grid-template-columns: 1fr auto 1fr;
+                align-items: center;
+                gap: 10px;
+            }
+
+            .navbar .logo {
+                grid-column: 1;
+                justify-self: start;
+            }
+
+            .nav-toggle {
+                grid-column: 2;
+                justify-self: center;
+            }
+
+            .navbar>.btn {
+                grid-column: 3;
+                justify-self: end;
+                width: auto;
+                min-width: 132px;
+                margin: 0;
+                padding: 10px 16px;
+                justify-content: center;
+                text-align: center;
+                white-space: nowrap;
+            }
+
             .section {
                 padding: 48px 0;
             }
@@ -598,6 +628,7 @@
     <section class="section brands-section">
         <div class="container center">
             <h2 class="section-title">Solar Battery Brands</h2>
+            <p class="section-subtitle">We partner with trusted global battery manufacturers to deliver reliable, high-performance energy storage solutions for Australian homes.</p>
             <div class="simple-grid brands-grid">
                 <div class="card">
                     <img class="brand-card-image" src="assets/GSL logo.png" alt="Growatt solar battery system" loading="lazy" />
